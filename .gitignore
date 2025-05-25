@@ -1,6 +1,7 @@
-image/**/*.jpg
-image/**/*.png
 batch_results_*
 batch_temp_*
 *.jsonl
 *.csv
+image/**/*.jpeg
+image/**/*.jpg
+image/**/*.png
