@@ -275,8 +275,11 @@ def main():
 
     if result_file:
         logger.info(f"批处理成功完成！结果文件: {result_file}")
+        return 0
     else:
         logger.error("批处理失败")
+        return 1
 
 if __name__ == "__main__":
-    main()
+    import sys
+    sys.exit(main())
