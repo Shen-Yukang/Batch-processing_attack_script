@@ -8,6 +8,7 @@ import time
 import json
 import logging
 import subprocess
+import argparse
 from datetime import datetime
 from typing import List, Dict, Optional
 from cost_tracker import CostTracker
@@ -15,6 +16,18 @@ from cost_tracker import CostTracker
 # 设置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+
+def get_csv_line_count(csv_path):
+    """获取CSV文件的行数"""
+    import csv
+    try:
+        with open(csv_path, 'r', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            # 减去1是因为通常第一行是标题
+            return sum(1 for _ in reader) - 1
+    except Exception as e:
+        logger.error(f"读取CSV文件失败: {e}")
+        return 0
 
 class BatchJob:
     """批处理任务类"""
@@ -47,9 +60,11 @@ class BatchJob:
 class RobustBatchProcessor:
     """健壮的批处理器"""
 
-    def __init__(self, output_dir: str = "batch_results", batch_size: int = 20):
+    def __init__(self, output_dir: str = "batch_results", batch_size: int = 20, input_csv: str = "_csvs/content_CogAgent.csv", model: str = "gpt-4o-mini"):
         self.output_dir = output_dir
         self.batch_size = batch_size
+        self.input_csv = input_csv
+        self.model = model
         self.jobs: List[BatchJob] = []
         self.status_file = os.path.join(output_dir, "batch_status.json")
 
@@ -127,7 +142,13 @@ class RobustBatchProcessor:
 
     def run_command_with_timeout(self, command: str, timeout: int = 600) -> tuple[bool, str]:
         """运行命令并设置超时"""
+        logger.info(f"🖥️  执行命令: {command}")
+        logger.info(f"⏱️  超时设置: {timeout}秒")
+
         try:
+            start_time = datetime.now()
+            logger.info(f"🚀 开始执行命令...")
+
             result = subprocess.run(
                 command,
                 shell=True,
@@ -136,14 +157,58 @@ class RobustBatchProcessor:
                 timeout=timeout
             )
 
+            end_time = datetime.now()
+            duration = (end_time - start_time).total_seconds()
+            logger.info(f"⏱️  命令执行耗时: {duration:.1f}秒")
+            logger.info(f"🔍 返回码: {result.returncode}")
+
+            # 检查返回码和输出内容
             if result.returncode == 0:
-                return True, result.stdout
+                # 即使返回码为0，也要检查是否有错误信息
+                combined_output = result.stdout + result.stderr
+                logger.debug(f"📤 标准输出: {result.stdout[:200]}...")
+                logger.debug(f"📤 错误输出: {result.stderr[:200]}...")
+
+                # 检查常见的错误模式
+                error_patterns = [
+                    "请提供OpenAI API密钥",
+                    "API密钥",
+                    "authentication",
+                    "unauthorized",
+                    "invalid api key",
+                    "error",
+                    "failed",
+                    "exception"
+                ]
+
+                for pattern in error_patterns:
+                    if pattern.lower() in combined_output.lower():
+                        logger.error(f"❌ 检测到错误模式: {pattern}")
+                        return False, combined_output
+
+                # 检查是否有实际的成功输出
+                success_patterns = ["文件上传成功", "批处理创建成功", "批处理已完成", "批处理成功完成"]
+                has_success_indicator = any(pattern in combined_output for pattern in success_patterns)
+
+                if has_success_indicator:
+                    logger.info(f"✅ 检测到成功标识")
+                    return True, result.stdout
+                elif len(combined_output.strip()) == 0:
+                    logger.warning(f"⚠️  命令执行无输出，可能存在配置问题")
+                    return False, "命令执行无输出，可能存在配置问题"
+                else:
+                    logger.info(f"✅ 命令执行完成，返回码为0")
+                    return True, result.stdout
             else:
+                logger.error(f"❌ 命令执行失败，返回码: {result.returncode}")
+                logger.error(f"🔍 错误输出: {result.stderr}")
                 return False, result.stderr
 
         except subprocess.TimeoutExpired:
+            logger.error(f"⏰ 命令执行超时 ({timeout}秒)")
             return False, f"命令超时 ({timeout}秒)"
         except Exception as e:
+            logger.error(f"💥 命令执行异常: {str(e)}")
             return False, f"命令执行异常: {str(e)}"
 
     def process_single_job(self, job: BatchJob) -> bool:
@@ -157,7 +222,7 @@ class RobustBatchProcessor:
 
         # 步骤1: 创建输入文件
         jsonl_file = os.path.join(self.output_dir, f"{job.name}.jsonl")
-        create_cmd = f"python create_safe_batch_input.py new_csv/content_CogAgent.csv {jsonl_file} --model gpt-4o-mini --start-row {job.start_row} --end-row {job.end_row}"
+        create_cmd = f"python create_safe_batch_input.py {self.input_csv} {jsonl_file} --model {self.model} --start-row {job.start_row} --end-row {job.end_row}"
 
         success, output = self.run_command_with_timeout(create_cmd, 120)
         if not success:
@@ -273,33 +338,42 @@ class RobustBatchProcessor:
 
         if completed:
             logger.info("可以合并结果:")
-            logger.info(f"python merge_all_results.py {self.output_dir} new_csv/content_CogAgent.csv final_output.csv")
+            logger.info(f"python merge_all_results.py {self.output_dir} {self.input_csv} final_output.csv")
 
             # 显示成本总结
             logger.info("\n" + "=" * 80)
             self.cost_tracker.print_cost_report()
 
 def main():
-    import sys
+    parser = argparse.ArgumentParser(description="健壮的批处理器")
+    parser.add_argument("--input-csv", required=True, help="输入CSV文件路径")
+    parser.add_argument("--start-row", type=int, default=0, help="起始行")
+    parser.add_argument("--end-row", type=int, default=None, help="结束行，不指定则使用文件总行数")
+    parser.add_argument("--batch-size", type=int, default=20, help="批次大小")
+    parser.add_argument("--output-dir", default=None, help="输出目录，默认为以时间戳命名的目录")
+    parser.add_argument("--model", default="gpt-4o-mini", help="使用的模型")
+    args = parser.parse_args()
 
-    # 解析命令行参数
-    start_from = 0  # 默认从130开始
-    end_at = 20      # 默认到172结束
-    batch_size = 20   # 默认每批20行
+    # 检查文件是否存在
+    if not os.path.exists(args.input_csv):
+        logger.error(f"输入文件不存在: {args.input_csv}")
+        import sys
+        sys.exit(1)
 
-    if len(sys.argv) > 1:
-        start_from = int(sys.argv[1])
-    if len(sys.argv) > 2:
-        end_at = int(sys.argv[2])
-    if len(sys.argv) > 3:
-        batch_size = int(sys.argv[3])
+    # 如果未指定结束行，获取CSV文件的行数
+    if args.end_row is None:
+        args.end_row = get_csv_line_count(args.input_csv)
+        logger.info(f"检测到CSV文件 {args.input_csv} 共有 {args.end_row} 行数据")
+
+    # 设置输出目录
+    output_dir = args.output_dir if args.output_dir else f"batch_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
     # 创建处理器
-    processor = RobustBatchProcessor("batch_results_20250524_224700", batch_size)
+    processor = RobustBatchProcessor(output_dir, args.batch_size, args.input_csv, args.model)
 
     # 创建任务（如果还没有）
     if not processor.jobs:
-        processor.create_jobs(start_from, end_at)
+        processor.create_jobs(args.start_row, args.end_row)
 
     # 处理所有任务
     processor.process_all_jobs()

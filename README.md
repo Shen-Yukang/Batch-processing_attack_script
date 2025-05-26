@@ -128,6 +128,45 @@ python batch_processor.py batch_input.jsonl --output-dir results
 python process_batch_results.py merge results/batch_results_*.jsonl --original-csv new_csv/content_CogAgent.csv --output-csv output.csv
 ```
 
+## 健壮批处理器（推荐大型项目使用）
+
+对于需要处理大量数据的项目，我们提供了具有完整容错和重试机制的健壮批处理器：
+
+### 健壮批处理器特点
+
+- **任务管理**：自动将CSV文件分割成多个小批次任务
+- **自动断点续传**：中断后可从上次停止的地方继续
+- **错误处理**：自动重试失败的任务（最多3次）
+- **状态跟踪**：记录每个任务的状态和错误信息
+- **成本估算**：自动计算和记录API使用成本
+- **自动检测行数**：自动检测CSV文件的总行数
+- **可定制化**：支持自定义模型、批次大小等参数
+
+### 使用健壮批处理器
+
+```bash
+# 处理CSV文件全部内容
+python robust_batch_processor.py --input-csv _csvs/content_FigStep.csv
+
+# 指定处理范围
+python robust_batch_processor.py --input-csv _csvs/content_MMSafeBench_cleaned.csv --start-row 100 --end-row 500
+
+# 指定批次大小和模型
+python robust_batch_processor.py --input-csv _csvs/content_Jailbreak28k.csv --batch-size 50 --model gpt-4o
+
+# 指定输出目录
+python robust_batch_processor.py --input-csv _csvs/content_FigStep.csv --output-dir my_batch_results
+```
+
+### 健壮批处理器参数说明
+
+- `--input-csv`：输入CSV文件路径（必需）
+- `--start-row`：开始处理的行号，默认为0
+- `--end-row`：结束处理的行号，不指定则处理到文件末尾
+- `--batch-size`：每个批次的行数，默认为20
+- `--output-dir`：输出目录，默认使用时间戳命名
+- `--model`：使用的模型，默认为gpt-4o-mini
+
 ### 批处理优势
 
 - **成本节省**: 比实时API便宜50%
@@ -190,10 +229,14 @@ python process_csv_with_chatgpt.py new_csv/content_CogAgent.csv test_output.csv 
 
 # 处理全部数据
 python process_csv_with_chatgpt.py new_csv/content_CogAgent.csv full_output.csv --delay 1.5
+
+# 使用健壮批处理器处理大量数据
+python robust_batch_processor.py --input-csv _csvs/content_FigStep.csv
 ```
 
 ## 推荐的测试流程
 
 1. **首次使用**：运行 `python quick_test.py` 测试第1行
 2. **确认正常**：运行 `python quick_test.py 5` 测试前5行
-3. **大规模处理**：使用 `python run_example.py` 或命令行参数处理更多数据
+3. **小规模批处理**：使用 `python batch_workflow.py` 处理少量数据
+4. **大规模处理**：使用 `python robust_batch_processor.py` 处理大量数据

@@ -17,20 +17,53 @@ logger = logging.getLogger(__name__)
 class CostTracker:
     """成本跟踪器"""
     
-    # GPT-4o-mini 定价 (per 1M tokens)
+    # 模型定价 (per 1M tokens)
     PRICING = {
+        # GPT-4o 系列
+        "gpt-4o": {
+            "input": 2.50,   # $2.50 per 1M input tokens  
+            "output": 10.00  # $10.00 per 1M output tokens
+        },
+        "gpt-4o-2024-05-13": {
+            "input": 5.00,   # $5.00 per 1M input tokens
+            "output": 15.00  # $15.00 per 1M output tokens
+        },
         "gpt-4o-mini": {
             "input": 0.15,   # $0.15 per 1M input tokens
             "output": 0.60   # $0.60 per 1M output tokens
         },
-        "gpt-4o": {
-            "input": 2.50,   # $2.50 per 1M input tokens  
-            "output": 10.00  # $10.00 per 1M output tokens
+        "gpt-4o-mini-realtime-preview": {
+            "input": 0.60,   # $0.60 per 1M input tokens
+            "output": 2.40   # $2.40 per 1M output tokens
+        },
+        "gpt-4o-realtime-preview": {
+            "input": 5.00,   # $5.00 per 1M input tokens
+            "output": 20.00  # $20.00 per 1M output tokens
+        },
+        
+        # GPT-4.1 系列
+        "gpt-4.1": {
+            "input": 2.00,   # $2.00 per 1M input tokens
+            "output": 8.00   # $8.00 per 1M output tokens
+        },
+        "gpt-4.1-mini": {
+            "input": 0.40,   # $0.40 per 1M input tokens
+            "output": 1.60   # $1.60 per 1M output tokens
+        },
+        "gpt-4.1-nano": {
+            "input": 0.10,   # $0.10 per 1M input tokens
+            "output": 0.40   # $0.40 per 1M output tokens
+        },
+        
+        # GPT-4.5 系列
+        "gpt-4.5-preview": {
+            "input": 75.00,  # $75.00 per 1M input tokens
+            "output": 150.00 # $150.00 per 1M output tokens
         }
     }
     
     # 批处理折扣
-    BATCH_DISCOUNT = 0.5  # 50% 折扣
+    BATCH_DISCOUNT = 0.5  # batch api 50% 折扣
     
     def __init__(self, cost_file: str = "batch_costs.json"):
         self.cost_file = cost_file
