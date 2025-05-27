@@ -1,6 +1,6 @@
 # ChatGPT批处理系统
 
-专业的ChatGPT Batch API处理系统，支持大规模图片和文本批处理。
+专业的ChatGPT Batch API处理系统，支持大规模图片和文本批处理。绝大部分由 Augment Code 辅助生成，完整干净的项目组成，用于学习和研究。
 
 ## 🚀 快速开始
 
@@ -80,6 +80,12 @@ chatgpt-batch-processor/
 ## 🔧 开发
 
 项目采用模块化设计，核心功能位于 `src/` 目录，可执行脚本位于 `scripts/` 目录。
+
+## 🤖参考
+
+==LLM==: Claude 4 & claude 3.7
+==Agents==: [Augment Code](https://www.augmentcode.com/) & [Cursor](https://www.cursor.com/students)
+
 
 ## 📄 许可证
 
