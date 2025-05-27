@@ -14,6 +14,8 @@ import json
 from typing import Optional, Dict, Any
 import argparse
 import logging
+import re
+from src.utils.config_loader import parse_config
 
 # 设置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -187,15 +189,15 @@ def process_csv_file(input_file: str, output_file: str, api_key: str,
         logger.error(f"保存文件失败: {e}")
 
 def main():
+    config = parse_config('config/batch_config.conf')
     parser = argparse.ArgumentParser(description='使用ChatGPT API处理CSV文件中的图片和文本')
     parser.add_argument('input_file', help='输入CSV文件路径')
     parser.add_argument('output_file', help='输出CSV文件路径')
     parser.add_argument('--api-key', help='OpenAI API密钥（也可通过环境变量OPENAI_API_KEY设置）')
-    parser.add_argument('--delay', type=float, default=1.0, help='API调用之间的延迟（秒），默认1.0')
+    parser.add_argument('--delay', type=float, default=float(config.get('DELAY', 1.0)), help='API调用之间的延迟（秒），默认1.0')
     parser.add_argument('--start-row', type=int, default=0, help='开始处理的行号（0开始），默认0')
     parser.add_argument('--end-row', type=int, help='结束处理的行号（不包含），默认处理到最后')
-    parser.add_argument('--model', default='gpt-4o-mini', help='使用的模型，默认gpt-4o-mini')
-
+    parser.add_argument('--model', default=config.get('MODEL', 'gpt-4o-mini'), help='使用的模型，默认gpt-4o-mini')
     args = parser.parse_args()
 
     # 获取API密钥

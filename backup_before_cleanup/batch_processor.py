@@ -127,7 +127,7 @@ class BatchProcessor:
             logger.error(f"错误详情: {str(e)}")
             return None
 
-    def wait_for_completion(self, batch_id: str, check_interval: int = 60) -> bool:
+    def wait_for_completion(self, batch_id: str, check_interval: int = 1800) -> bool:
         """
         等待批处理完成
 
@@ -290,7 +290,7 @@ class BatchProcessor:
             return None
 
     def process_batch(self, input_file: str, output_dir: str = ".",
-                     completion_window: str = "24h", check_interval: int = 60) -> Optional[str]:
+                     completion_window: str = "24h", check_interval: int = 1800) -> Optional[str]:
         """
         处理完整的批处理工作流程
 
@@ -298,7 +298,7 @@ class BatchProcessor:
             input_file: 输入JSONL文件路径
             output_dir: 输出目录
             completion_window: 完成时间窗口
-            check_interval: 状态检查间隔
+            check_interval: 状态检查间隔 （默认1800秒=30分钟）
 
         Returns:
             结果文件路径，如果失败返回None

@@ -17,6 +17,8 @@ import base64
 from datetime import datetime
 from typing import List, Dict, Optional, Tuple
 from cost_tracker import CostTracker
+import re
+from src.utils.config_loader import parse_config
 
 def setup_enhanced_logging(log_dir: str = "output/logs") -> logging.Logger:
     """设置增强的日志记录"""
@@ -451,7 +453,6 @@ class RobustBatchProcessor:
             logger.info(f"   输出长度: {len(output)} 字符")
 
             # 提取batch ID
-            import re
             batch_ids = re.findall(r'batch_[a-f0-9]{32}', output)
             current_batch_id = batch_ids[0] if batch_ids else None
 
@@ -845,14 +846,82 @@ class RobustBatchProcessor:
         logger.debug(f"📊 {os.path.basename(file_path)}: 解析出 {len(results)} 条结果")
         return results
 
+    def wait_for_completion(self, batch_id: str, check_interval: int = 60) -> bool:
+        """
+        等待批处理完成
+
+        Args:
+            batch_id: 批处理ID
+            check_interval: 检查间隔（秒）
+
+        Returns:
+            是否成功完成
+        """
+        logger.info(f"等待批处理完成: {batch_id}")
+        start_time = time.time()
+
+        while True:
+            status_info = self.get_batch_status(batch_id)
+            if not status_info:
+                logger.error("无法获取批处理状态")
+                return False
+
+            status = status_info['status']
+            elapsed_time = time.time() - start_time
+            logger.info(f"当前状态: {status} (已等待 {elapsed_time:.1f} 秒)")
+
+            # 官方所有状态处理
+            if status == 'validating':
+                logger.info("🔍 批处理正在验证输入文件...")
+            elif status == 'failed':
+                logger.error("❌ 批处理失败（输入文件未通过验证或运行失败）")
+                self._log_failure_details(status_info)
+                return False
+            elif status == 'in_progress':
+                logger.info("🚀 批处理正在运行...")
+            elif status == 'finalizing':
+                logger.info("📦 批处理已完成，正在准备结果...")
+            elif status == 'completed':
+                logger.info("✅ 批处理已完成，结果已准备好")
+                if status_info.get('request_counts'):
+                    counts = status_info['request_counts']
+                    total = getattr(counts, 'total', 0)
+                    completed = getattr(counts, 'completed', 0)
+                    failed = getattr(counts, 'failed', 0)
+                    logger.info(f"📊 最终统计: {completed}/{total} 完成, {failed} 失败")
+                return True
+            elif status == 'expired':
+                logger.error("⏰ 批处理已过期（24小时未完成）")
+                logger.error(f"过期时间: {status_info.get('expires_at')}")
+                return False
+            elif status == 'cancelling':
+                logger.warning("⚠️ 批处理正在取消（可能需要10分钟）")
+            elif status == 'cancelled':
+                logger.error("🚫 批处理已被取消")
+                return False
+            else:
+                logger.warning(f"⚠️ 未知批处理状态: {status}")
+
+            # 显示进度信息
+            if status_info.get('request_counts'):
+                counts = status_info['request_counts']
+                total = getattr(counts, 'total', 0)
+                completed = getattr(counts, 'completed', 0)
+                failed = getattr(counts, 'failed', 0)
+                logger.info(f"📈 进度: {completed}/{total} 完成, {failed} 失败")
+
+            logger.info(f"⏳ 等待 {check_interval} 秒后再次检查...")
+            time.sleep(check_interval)
+
 def main():
+    config = parse_config('config/batch_config.conf')
     parser = argparse.ArgumentParser(description="健壮的批处理器 - 增强版")
     parser.add_argument("--input-csv", help="输入CSV文件路径（可选，支持交互式选择）")
     parser.add_argument("--start-row", type=int, default=0, help="起始行")
     parser.add_argument("--end-row", type=int, default=None, help="结束行，不指定则使用文件总行数")
-    parser.add_argument("--batch-size", type=int, default=50, help="批次大小（推荐50-100以减少API调用频率）")
-    parser.add_argument("--model", default="gpt-4o-mini", help="使用的模型（推荐gpt-4o-mini用于批处理）")
-    parser.add_argument("--batch-interval", type=int, default=120, help="批次间等待时间（秒），默认120秒")
+    parser.add_argument("--batch-size", type=int, default=int(config.get('BATCH_SIZE', 50)), help="批次大小（推荐50-100以减少API调用频率）")
+    parser.add_argument("--model", default=config.get('MODEL', 'gpt-4o-mini'), help="使用的模型（推荐gpt-4o-mini用于批处理）")
+    parser.add_argument("--batch-interval", type=int, default=int(config.get('DELAY', 120)), help="批次间等待时间（秒），默认120秒")
     parser.add_argument("--interactive", action="store_true", help="强制使用交互式选择")
     args = parser.parse_args()
 

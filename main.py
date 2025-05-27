@@ -7,11 +7,14 @@ import sys
 import os
 import argparse
 from pathlib import Path
+import re
+from src.utils.config_loader import parse_config
 
 # 添加src目录到Python路径
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
 def main():
+    config = parse_config('config/batch_config.conf')
     parser = argparse.ArgumentParser(
         description='ChatGPT批处理系统',
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -28,9 +31,9 @@ def main():
     # 批处理命令
     batch_parser = subparsers.add_parser('batch', help='运行批处理')
     batch_parser.add_argument('input_csv', help='输入CSV文件')
-    batch_parser.add_argument('--output-dir', help='输出目录')
-    batch_parser.add_argument('--model', default='gpt-4o-mini', help='使用的模型')
-    batch_parser.add_argument('--batch-size', type=int, default=20, help='批次大小')
+    batch_parser.add_argument('--output-dir', help='输出目录', default=config.get('RESULTS_DIR'))
+    batch_parser.add_argument('--model', default=config.get('MODEL', 'gpt-4o-mini'), help='使用的模型')
+    batch_parser.add_argument('--batch-size', type=int, default=int(config.get('BATCH_SIZE', 20)), help='批次大小')
     
     # 测试命令
     test_parser = subparsers.add_parser('test', help='快速测试')

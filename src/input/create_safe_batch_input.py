@@ -10,6 +10,8 @@ import pandas as pd
 import argparse
 import logging
 from typing import Optional
+import re
+from src.utils.config_loader import parse_config
 
 # 设置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -179,13 +181,13 @@ def create_safe_batch_input_file(input_csv: str, output_jsonl: str, model: str =
         logger.error(f"写入JSONL文件失败: {e}")
 
 def main():
+    config = parse_config('config/batch_config.conf')
     parser = argparse.ArgumentParser(description='创建安全的OpenAI Batch API输入文件')
     parser.add_argument('input_csv', help='输入CSV文件路径')
     parser.add_argument('output_jsonl', help='输出JSONL文件路径')
-    parser.add_argument('--model', default='gpt-4o-mini', help='使用的模型，默认gpt-4o-mini')
+    parser.add_argument('--model', default=config.get('MODEL', 'gpt-4o-mini'), help='使用的模型，默认gpt-4o-mini')
     parser.add_argument('--start-row', type=int, default=0, help='开始处理的行号（0开始），默认0')
     parser.add_argument('--end-row', type=int, help='结束处理的行号（不包含），默认处理到最后')
-    
     args = parser.parse_args()
     
     # 检查输入文件是否存在
