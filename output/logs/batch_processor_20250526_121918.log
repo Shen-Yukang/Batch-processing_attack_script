@@ -1,0 +1,29 @@
+2025-05-26 12:19:18,741 - __main__ - INFO - setup_enhanced_logging:58 - 📝 详细日志保存到: output/logs/batch_processor_20250526_121918.log
+2025-05-26 12:19:18,742 - __main__ - INFO - main:799 - 🚀 健壮的批处理器 - 增强版
+2025-05-26 12:19:18,742 - __main__ - INFO - main:800 - ================================================================================
+2025-05-26 12:19:18,742 - __main__ - INFO - interactive_csv_selection:93 - 🔍 搜索可用的CSV文件...
+2025-05-26 12:19:18,742 - __main__ - INFO - interactive_csv_selection:102 - 📊 找到 11 个CSV文件:
+2025-05-26 12:19:18,743 - __main__ - INFO - interactive_csv_selection:109 -    1. ./complete_final_output.csv
+2025-05-26 12:19:18,743 - __main__ - INFO - interactive_csv_selection:110 -       📊 170 行数据, 💾 0.17 MB
+2025-05-26 12:19:18,745 - __main__ - INFO - interactive_csv_selection:109 -    2. ./current_status.csv
+2025-05-26 12:19:18,745 - __main__ - INFO - interactive_csv_selection:110 -       📊 170 行数据, 💾 0.17 MB
+2025-05-26 12:19:18,748 - __main__ - INFO - interactive_csv_selection:109 -    3. ./final_complete_output.csv
+2025-05-26 12:19:18,748 - __main__ - INFO - interactive_csv_selection:110 -       📊 1256 行数据, 💾 0.60 MB
+2025-05-26 12:19:18,749 - __main__ - INFO - interactive_csv_selection:109 -    4. ./final_output.csv
+2025-05-26 12:19:18,749 - __main__ - INFO - interactive_csv_selection:110 -       📊 500 行数据, 💾 0.15 MB
+2025-05-26 12:19:18,751 - __main__ - INFO - interactive_csv_selection:109 -    5. ./final_output_content_FigStep.csv
+2025-05-26 12:19:18,751 - __main__ - INFO - interactive_csv_selection:110 -       📊 500 行数据, 💾 0.49 MB
+2025-05-26 12:19:18,752 - __main__ - INFO - interactive_csv_selection:109 -    6. ./new_output.csv
+2025-05-26 12:19:18,752 - __main__ - INFO - interactive_csv_selection:110 -       📊 170 行数据, 💾 0.09 MB
+2025-05-26 12:19:18,753 - __main__ - INFO - interactive_csv_selection:109 -    7. ./output.csv
+2025-05-26 12:19:18,753 - __main__ - INFO - interactive_csv_selection:110 -       📊 170 行数据, 💾 0.08 MB
+2025-05-26 12:19:18,754 - __main__ - INFO - interactive_csv_selection:109 -    8. ./quick_test_result.csv
+2025-05-26 12:19:18,754 - __main__ - INFO - interactive_csv_selection:110 -       📊 170 行数据, 💾 0.07 MB
+2025-05-26 12:19:18,755 - __main__ - INFO - interactive_csv_selection:109 -    9. _csvs/content_FigStep.csv
+2025-05-26 12:19:18,755 - __main__ - INFO - interactive_csv_selection:110 -       📊 500 行数据, 💾 0.13 MB
+2025-05-26 12:19:18,758 - __main__ - INFO - interactive_csv_selection:109 -   10. _csvs/content_Jailbreak28k.csv
+2025-05-26 12:19:18,758 - __main__ - INFO - interactive_csv_selection:110 -       📊 896 行数据, 💾 0.51 MB
+2025-05-26 12:19:18,759 - __main__ - INFO - interactive_csv_selection:109 -   11. _csvs/content_MMSafeBench_cleaned.csv
+2025-05-26 12:19:18,759 - __main__ - INFO - interactive_csv_selection:110 -       📊 1256 行数据, 💾 0.23 MB
+2025-05-26 13:15:17,094 - __main__ - INFO - interactive_csv_selection:120 - 🛑 用户取消选择
+2025-05-26 13:15:17,097 - __main__ - ERROR - main:809 - ❌ 未选择CSV文件，退出

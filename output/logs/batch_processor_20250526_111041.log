@@ -1,0 +1,393 @@
+2025-05-26 11:10:41,849 - __main__ - INFO - setup_enhanced_logging:58 - 📝 详细日志保存到: output/logs/batch_processor_20250526_111041.log
+2025-05-26 11:10:41,850 - __main__ - INFO - main:770 - 🚀 健壮的批处理器 - 增强版
+2025-05-26 11:10:41,850 - __main__ - INFO - main:771 - ================================================================================
+2025-05-26 11:10:41,850 - __main__ - INFO - interactive_csv_selection:93 - 🔍 搜索可用的CSV文件...
+2025-05-26 11:10:41,850 - __main__ - INFO - interactive_csv_selection:102 - 📊 找到 11 个CSV文件:
+2025-05-26 11:10:41,851 - __main__ - INFO - interactive_csv_selection:109 -    1. ./complete_final_output.csv
+2025-05-26 11:10:41,851 - __main__ - INFO - interactive_csv_selection:110 -       📊 170 行数据, 💾 0.17 MB
+2025-05-26 11:10:41,852 - __main__ - INFO - interactive_csv_selection:109 -    2. ./current_status.csv
+2025-05-26 11:10:41,852 - __main__ - INFO - interactive_csv_selection:110 -       📊 170 行数据, 💾 0.17 MB
+2025-05-26 11:10:41,855 - __main__ - INFO - interactive_csv_selection:109 -    3. ./final_complete_output.csv
+2025-05-26 11:10:41,855 - __main__ - INFO - interactive_csv_selection:110 -       📊 1256 行数据, 💾 0.60 MB
+2025-05-26 11:10:41,856 - __main__ - INFO - interactive_csv_selection:109 -    4. ./final_output.csv
+2025-05-26 11:10:41,856 - __main__ - INFO - interactive_csv_selection:110 -       📊 500 行数据, 💾 0.15 MB
+2025-05-26 11:10:41,858 - __main__ - INFO - interactive_csv_selection:109 -    5. ./final_output_content_FigStep.csv
+2025-05-26 11:10:41,858 - __main__ - INFO - interactive_csv_selection:110 -       📊 500 行数据, 💾 0.49 MB
+2025-05-26 11:10:41,859 - __main__ - INFO - interactive_csv_selection:109 -    6. ./new_output.csv
+2025-05-26 11:10:41,859 - __main__ - INFO - interactive_csv_selection:110 -       📊 170 行数据, 💾 0.09 MB
+2025-05-26 11:10:41,859 - __main__ - INFO - interactive_csv_selection:109 -    7. ./output.csv
+2025-05-26 11:10:41,859 - __main__ - INFO - interactive_csv_selection:110 -       📊 170 行数据, 💾 0.08 MB
+2025-05-26 11:10:41,860 - __main__ - INFO - interactive_csv_selection:109 -    8. ./quick_test_result.csv
+2025-05-26 11:10:41,860 - __main__ - INFO - interactive_csv_selection:110 -       📊 170 行数据, 💾 0.07 MB
+2025-05-26 11:10:41,861 - __main__ - INFO - interactive_csv_selection:109 -    9. _csvs/content_FigStep.csv
+2025-05-26 11:10:41,861 - __main__ - INFO - interactive_csv_selection:110 -       📊 500 行数据, 💾 0.13 MB
+2025-05-26 11:10:41,863 - __main__ - INFO - interactive_csv_selection:109 -   10. _csvs/content_Jailbreak28k.csv
+2025-05-26 11:10:41,863 - __main__ - INFO - interactive_csv_selection:110 -       📊 896 行数据, 💾 0.51 MB
+2025-05-26 11:10:41,864 - __main__ - INFO - interactive_csv_selection:109 -   11. _csvs/content_MMSafeBench_cleaned.csv
+2025-05-26 11:10:41,864 - __main__ - INFO - interactive_csv_selection:110 -       📊 1256 行数据, 💾 0.23 MB
+2025-05-26 11:10:43,182 - __main__ - INFO - interactive_csv_selection:126 - ✅ 选择了文件: _csvs/content_MMSafeBench_cleaned.csv
+2025-05-26 11:10:43,182 - __main__ - INFO - main:791 - 📊 选择的CSV文件: _csvs/content_MMSafeBench_cleaned.csv
+2025-05-26 11:10:43,186 - __main__ - INFO - main:794 - 📈 文件统计: 1256 行数据, 0.23 MB
+2025-05-26 11:10:43,186 - __main__ - INFO - main:799 - 📊 将处理全部 1256 行数据
+2025-05-26 11:10:43,187 - __main__ - INFO - main:807 - 📋 处理计划:
+2025-05-26 11:10:43,187 - __main__ - INFO - main:808 -    - 批次大小: 20
+2025-05-26 11:10:43,187 - __main__ - INFO - main:809 -    - 预计批次数: 63
+2025-05-26 11:10:43,187 - __main__ - INFO - main:810 -    - 使用模型: gpt-4o-mini
+2025-05-26 11:10:43,187 - __main__ - INFO - main:811 -    - 估算成本: $3.78
+2025-05-26 11:10:44,761 - __main__ - INFO - __init__:210 - 📁 输出目录: output/batch_results_content_MMSafeBench_cleaned_20250526_111044
+2025-05-26 11:10:44,765 - __main__ - INFO - create_jobs:279 - 创建了 63 个批处理任务
+2025-05-26 11:10:44,765 - __main__ - INFO - process_all_jobs:519 - ================================================================================
+2025-05-26 11:10:44,765 - __main__ - INFO - process_all_jobs:520 - 开始处理 63 个批处理任务
+2025-05-26 11:10:44,766 - __main__ - INFO - process_all_jobs:521 - ================================================================================
+2025-05-26 11:10:44,766 - __main__ - INFO - process_all_jobs:534 - 
+处理任务 1/63: batch_001
+2025-05-26 11:10:44,770 - __main__ - INFO - process_single_job:408 - 📦 处理任务 batch_001 (第1次尝试)
+2025-05-26 11:10:44,770 - __main__ - INFO - process_single_job:409 -    行范围: 1-20
+2025-05-26 11:10:44,770 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python create_safe_batch_input.py _csvs/content_MMSafeBench_cleaned.csv output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_001.jsonl --model gpt-4o-mini --start-row 0 --end-row 20
+2025-05-26 11:10:44,770 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 120秒
+2025-05-26 11:10:44,770 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:10:44,997 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 0.2秒
+2025-05-26 11:10:44,997 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:10:44,997 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:10:44,997 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:10:44,963 - INFO - 成功读取CSV文件，共1256行
+2025-05-26 11:10:44,964 - INFO - 处理范围: 第1行到第20行
+2025-05-26 11:10:44,967 - INFO - 处理进度: 10/20
+2025-05-26 11:10:44,971 - INFO - 处理进度: 20/20
+2025-05-26 1...
+2025-05-26 11:10:44,997 - __main__ - INFO - run_safe_command:388 - ✅ 命令执行完成，返回码为0
+2025-05-26 11:10:44,998 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python batch_processor.py output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_001.jsonl --output-dir output/batch_results_content_MMSafeBench_cleaned_20250526_111044 --check-interval 30
+2025-05-26 11:10:44,998 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 600秒
+2025-05-26 11:10:44,998 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:11:49,405 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 64.4秒
+2025-05-26 11:11:49,405 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:11:49,405 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:11:49,405 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:10:45,204 - INFO - 开始批处理工作流程
+2025-05-26 11:10:47,785 - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-05-26 11:10:47,786 - INFO - 文件上传成功，文件ID: file-U3kR...
+2025-05-26 11:11:49,405 - __main__ - INFO - run_safe_command:377 - ✅ 检测到成功标识
+2025-05-26 11:11:49,406 - __main__ - WARNING - process_single_job:451 - ⚠️  batch_001 命令成功但未找到专用结果文件
+2025-05-26 11:11:49,406 - __main__ - INFO - process_single_job:452 - 📁 当前结果文件数量: 1
+2025-05-26 11:11:49,406 - __main__ - INFO - process_single_job:458 - 📄 检查最新结果文件: batch_results_batch_68348477fb7081909e442a68e303f7b9.jsonl
+2025-05-26 11:11:49,406 - __main__ - INFO - process_single_job:468 - ✅ 在最新文件中找到当前批次数据: ['row_0', 'row_1']
+2025-05-26 11:11:49,407 - cost_tracker - INFO - record_batch_cost:179 - 记录批次成本: batch_001 = $0.0030
+2025-05-26 11:11:49,407 - __main__ - INFO - process_single_job:503 - ✅ batch_001 完成 (估算成本: $0.0030)
+2025-05-26 11:11:49,407 - __main__ - INFO - process_all_jobs:541 - 等待 30 秒后处理下一个任务...
+2025-05-26 11:12:19,412 - __main__ - INFO - process_all_jobs:534 - 
+处理任务 2/63: batch_002
+2025-05-26 11:12:19,416 - __main__ - INFO - process_single_job:408 - 📦 处理任务 batch_002 (第1次尝试)
+2025-05-26 11:12:19,416 - __main__ - INFO - process_single_job:409 -    行范围: 21-40
+2025-05-26 11:12:19,417 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python create_safe_batch_input.py _csvs/content_MMSafeBench_cleaned.csv output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_002.jsonl --model gpt-4o-mini --start-row 20 --end-row 40
+2025-05-26 11:12:19,417 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 120秒
+2025-05-26 11:12:19,417 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:12:19,669 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 11:12:19,669 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:12:19,669 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:12:19,669 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:12:19,630 - INFO - 成功读取CSV文件，共1256行
+2025-05-26 11:12:19,630 - INFO - 处理范围: 第21行到第40行
+2025-05-26 11:12:19,637 - INFO - 处理进度: 10/20
+2025-05-26 11:12:19,643 - INFO - 处理进度: 20/20
+2025-05-26 ...
+2025-05-26 11:12:19,669 - __main__ - INFO - run_safe_command:388 - ✅ 命令执行完成，返回码为0
+2025-05-26 11:12:19,669 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python batch_processor.py output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_002.jsonl --output-dir output/batch_results_content_MMSafeBench_cleaned_20250526_111044 --check-interval 30
+2025-05-26 11:12:19,669 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 600秒
+2025-05-26 11:12:19,669 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:20:58,985 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 519.3秒
+2025-05-26 11:20:58,985 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:20:58,986 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:20:58,986 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:12:19,863 - INFO - 开始批处理工作流程
+2025-05-26 11:12:22,066 - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-05-26 11:12:22,069 - INFO - 文件上传成功，文件ID: file-5V8r...
+2025-05-26 11:20:58,986 - __main__ - INFO - run_safe_command:377 - ✅ 检测到成功标识
+2025-05-26 11:20:58,986 - __main__ - WARNING - process_single_job:451 - ⚠️  batch_002 命令成功但未找到专用结果文件
+2025-05-26 11:20:58,986 - __main__ - INFO - process_single_job:452 - 📁 当前结果文件数量: 2
+2025-05-26 11:20:58,986 - __main__ - INFO - process_single_job:458 - 📄 检查最新结果文件: batch_results_batch_683484d6327081909017e6467387ecc6.jsonl
+2025-05-26 11:20:58,986 - __main__ - INFO - process_single_job:468 - ✅ 在最新文件中找到当前批次数据: ['row_20', 'row_21']
+2025-05-26 11:20:58,987 - cost_tracker - INFO - record_batch_cost:179 - 记录批次成本: batch_002 = $0.0030
+2025-05-26 11:20:58,988 - __main__ - INFO - process_single_job:503 - ✅ batch_002 完成 (估算成本: $0.0030)
+2025-05-26 11:20:58,988 - __main__ - INFO - process_all_jobs:541 - 等待 30 秒后处理下一个任务...
+2025-05-26 11:21:29,005 - __main__ - INFO - process_all_jobs:534 - 
+处理任务 3/63: batch_003
+2025-05-26 11:21:29,009 - __main__ - INFO - process_single_job:408 - 📦 处理任务 batch_003 (第1次尝试)
+2025-05-26 11:21:29,010 - __main__ - INFO - process_single_job:409 -    行范围: 41-60
+2025-05-26 11:21:29,010 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python create_safe_batch_input.py _csvs/content_MMSafeBench_cleaned.csv output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_003.jsonl --model gpt-4o-mini --start-row 40 --end-row 60
+2025-05-26 11:21:29,010 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 120秒
+2025-05-26 11:21:29,010 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:21:29,257 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 0.2秒
+2025-05-26 11:21:29,257 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:21:29,257 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:21:29,257 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:21:29,219 - INFO - 成功读取CSV文件，共1256行
+2025-05-26 11:21:29,219 - INFO - 处理范围: 第41行到第60行
+2025-05-26 11:21:29,225 - INFO - 处理进度: 10/20
+2025-05-26 11:21:29,232 - INFO - 处理进度: 20/20
+2025-05-26 ...
+2025-05-26 11:21:29,257 - __main__ - INFO - run_safe_command:388 - ✅ 命令执行完成，返回码为0
+2025-05-26 11:21:29,257 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python batch_processor.py output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_003.jsonl --output-dir output/batch_results_content_MMSafeBench_cleaned_20250526_111044 --check-interval 30
+2025-05-26 11:21:29,257 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 600秒
+2025-05-26 11:21:29,257 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:27:21,857 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 352.6秒
+2025-05-26 11:27:21,857 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:27:21,857 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:27:21,857 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:21:29,449 - INFO - 开始批处理工作流程
+2025-05-26 11:21:31,208 - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-05-26 11:21:31,212 - INFO - 文件上传成功，文件ID: file-TjuE...
+2025-05-26 11:27:21,857 - __main__ - INFO - run_safe_command:377 - ✅ 检测到成功标识
+2025-05-26 11:27:21,858 - __main__ - WARNING - process_single_job:451 - ⚠️  batch_003 命令成功但未找到专用结果文件
+2025-05-26 11:27:21,858 - __main__ - INFO - process_single_job:452 - 📁 当前结果文件数量: 3
+2025-05-26 11:27:21,858 - __main__ - INFO - process_single_job:458 - 📄 检查最新结果文件: batch_results_batch_683486fb4e208190a4b2d38e1a376e22.jsonl
+2025-05-26 11:27:21,858 - __main__ - INFO - process_single_job:468 - ✅ 在最新文件中找到当前批次数据: ['row_40', 'row_41']
+2025-05-26 11:27:21,859 - cost_tracker - INFO - record_batch_cost:179 - 记录批次成本: batch_003 = $0.0030
+2025-05-26 11:27:21,859 - __main__ - INFO - process_single_job:503 - ✅ batch_003 完成 (估算成本: $0.0030)
+2025-05-26 11:27:21,860 - __main__ - INFO - process_all_jobs:541 - 等待 30 秒后处理下一个任务...
+2025-05-26 11:27:51,865 - __main__ - INFO - process_all_jobs:534 - 
+处理任务 4/63: batch_004
+2025-05-26 11:27:51,869 - __main__ - INFO - process_single_job:408 - 📦 处理任务 batch_004 (第1次尝试)
+2025-05-26 11:27:51,870 - __main__ - INFO - process_single_job:409 -    行范围: 61-80
+2025-05-26 11:27:51,870 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python create_safe_batch_input.py _csvs/content_MMSafeBench_cleaned.csv output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_004.jsonl --model gpt-4o-mini --start-row 60 --end-row 80
+2025-05-26 11:27:51,870 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 120秒
+2025-05-26 11:27:51,870 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:27:52,111 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 0.2秒
+2025-05-26 11:27:52,111 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:27:52,111 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:27:52,111 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:27:52,072 - INFO - 成功读取CSV文件，共1256行
+2025-05-26 11:27:52,072 - INFO - 处理范围: 第61行到第80行
+2025-05-26 11:27:52,078 - INFO - 处理进度: 10/20
+2025-05-26 11:27:52,084 - INFO - 处理进度: 20/20
+2025-05-26 ...
+2025-05-26 11:27:52,111 - __main__ - INFO - run_safe_command:388 - ✅ 命令执行完成，返回码为0
+2025-05-26 11:27:52,111 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python batch_processor.py output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_004.jsonl --output-dir output/batch_results_content_MMSafeBench_cleaned_20250526_111044 --check-interval 30
+2025-05-26 11:27:52,111 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 600秒
+2025-05-26 11:27:52,111 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:36:59,700 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 547.6秒
+2025-05-26 11:36:59,700 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:36:59,700 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:36:59,700 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:27:52,307 - INFO - 开始批处理工作流程
+2025-05-26 11:27:54,616 - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-05-26 11:27:54,618 - INFO - 文件上传成功，文件ID: file-9vt6...
+2025-05-26 11:36:59,700 - __main__ - INFO - run_safe_command:377 - ✅ 检测到成功标识
+2025-05-26 11:36:59,701 - __main__ - WARNING - process_single_job:451 - ⚠️  batch_004 命令成功但未找到专用结果文件
+2025-05-26 11:36:59,701 - __main__ - INFO - process_single_job:452 - 📁 当前结果文件数量: 4
+2025-05-26 11:36:59,701 - __main__ - INFO - process_single_job:458 - 📄 检查最新结果文件: batch_results_batch_6834887ac94081908d417275251ced50.jsonl
+2025-05-26 11:36:59,701 - __main__ - INFO - process_single_job:468 - ✅ 在最新文件中找到当前批次数据: ['row_60', 'row_61']
+2025-05-26 11:36:59,701 - cost_tracker - INFO - record_batch_cost:179 - 记录批次成本: batch_004 = $0.0030
+2025-05-26 11:36:59,702 - __main__ - INFO - process_single_job:503 - ✅ batch_004 完成 (估算成本: $0.0030)
+2025-05-26 11:36:59,702 - __main__ - INFO - process_all_jobs:541 - 等待 30 秒后处理下一个任务...
+2025-05-26 11:37:29,707 - __main__ - INFO - process_all_jobs:534 - 
+处理任务 5/63: batch_005
+2025-05-26 11:37:29,711 - __main__ - INFO - process_single_job:408 - 📦 处理任务 batch_005 (第1次尝试)
+2025-05-26 11:37:29,712 - __main__ - INFO - process_single_job:409 -    行范围: 81-100
+2025-05-26 11:37:29,712 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python create_safe_batch_input.py _csvs/content_MMSafeBench_cleaned.csv output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_005.jsonl --model gpt-4o-mini --start-row 80 --end-row 100
+2025-05-26 11:37:29,712 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 120秒
+2025-05-26 11:37:29,712 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:37:29,957 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 0.2秒
+2025-05-26 11:37:29,957 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:37:29,957 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:37:29,957 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:37:29,913 - INFO - 成功读取CSV文件，共1256行
+2025-05-26 11:37:29,913 - INFO - 处理范围: 第81行到第100行
+2025-05-26 11:37:29,920 - INFO - 处理进度: 10/20
+2025-05-26 11:37:29,927 - INFO - 处理进度: 20/20
+2025-05-26...
+2025-05-26 11:37:29,957 - __main__ - INFO - run_safe_command:388 - ✅ 命令执行完成，返回码为0
+2025-05-26 11:37:29,957 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python batch_processor.py output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_005.jsonl --output-dir output/batch_results_content_MMSafeBench_cleaned_20250526_111044 --check-interval 30
+2025-05-26 11:37:29,957 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 600秒
+2025-05-26 11:37:29,957 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:40:04,301 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 154.3秒
+2025-05-26 11:40:04,301 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:40:04,301 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:40:04,301 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:37:30,157 - INFO - 开始批处理工作流程
+2025-05-26 11:37:32,145 - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-05-26 11:37:32,147 - INFO - 文件上传成功，文件ID: file-GeUv...
+2025-05-26 11:40:04,301 - __main__ - INFO - run_safe_command:377 - ✅ 检测到成功标识
+2025-05-26 11:40:04,301 - __main__ - WARNING - process_single_job:451 - ⚠️  batch_005 命令成功但未找到专用结果文件
+2025-05-26 11:40:04,301 - __main__ - INFO - process_single_job:452 - 📁 当前结果文件数量: 5
+2025-05-26 11:40:04,301 - __main__ - INFO - process_single_job:458 - 📄 检查最新结果文件: batch_results_batch_68348abc549c819096c1fae0f448a716.jsonl
+2025-05-26 11:40:04,302 - __main__ - INFO - process_single_job:468 - ✅ 在最新文件中找到当前批次数据: ['row_80', 'row_81']
+2025-05-26 11:40:04,302 - cost_tracker - INFO - record_batch_cost:179 - 记录批次成本: batch_005 = $0.0030
+2025-05-26 11:40:04,303 - __main__ - INFO - process_single_job:503 - ✅ batch_005 完成 (估算成本: $0.0030)
+2025-05-26 11:40:04,303 - __main__ - INFO - process_all_jobs:541 - 等待 30 秒后处理下一个任务...
+2025-05-26 11:40:34,308 - __main__ - INFO - process_all_jobs:534 - 
+处理任务 6/63: batch_006
+2025-05-26 11:40:34,311 - __main__ - INFO - process_single_job:408 - 📦 处理任务 batch_006 (第1次尝试)
+2025-05-26 11:40:34,311 - __main__ - INFO - process_single_job:409 -    行范围: 101-120
+2025-05-26 11:40:34,312 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python create_safe_batch_input.py _csvs/content_MMSafeBench_cleaned.csv output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_006.jsonl --model gpt-4o-mini --start-row 100 --end-row 120
+2025-05-26 11:40:34,312 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 120秒
+2025-05-26 11:40:34,312 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:40:34,591 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 11:40:34,591 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:40:34,591 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:40:34,591 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:40:34,547 - INFO - 成功读取CSV文件，共1256行
+2025-05-26 11:40:34,547 - INFO - 处理范围: 第101行到第120行
+2025-05-26 11:40:34,555 - INFO - 处理进度: 10/20
+2025-05-26 11:40:34,562 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 11:40:34,591 - __main__ - INFO - run_safe_command:388 - ✅ 命令执行完成，返回码为0
+2025-05-26 11:40:34,591 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python batch_processor.py output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_006.jsonl --output-dir output/batch_results_content_MMSafeBench_cleaned_20250526_111044 --check-interval 30
+2025-05-26 11:40:34,591 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 600秒
+2025-05-26 11:40:34,591 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:44:39,696 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 245.1秒
+2025-05-26 11:44:39,696 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:44:39,696 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:44:39,696 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:40:34,787 - INFO - 开始批处理工作流程
+2025-05-26 11:40:36,685 - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-05-26 11:40:36,687 - INFO - 文件上传成功，文件ID: file-Mtdy...
+2025-05-26 11:44:39,696 - __main__ - INFO - run_safe_command:377 - ✅ 检测到成功标识
+2025-05-26 11:44:39,697 - __main__ - WARNING - process_single_job:451 - ⚠️  batch_006 命令成功但未找到专用结果文件
+2025-05-26 11:44:39,697 - __main__ - INFO - process_single_job:452 - 📁 当前结果文件数量: 6
+2025-05-26 11:44:39,697 - __main__ - INFO - process_single_job:458 - 📄 检查最新结果文件: batch_results_batch_68348b74c85881908e38d8b1e9492980.jsonl
+2025-05-26 11:44:39,697 - __main__ - INFO - process_single_job:468 - ✅ 在最新文件中找到当前批次数据: ['row_100', 'row_101']
+2025-05-26 11:44:39,698 - cost_tracker - INFO - record_batch_cost:179 - 记录批次成本: batch_006 = $0.0030
+2025-05-26 11:44:39,698 - __main__ - INFO - process_single_job:503 - ✅ batch_006 完成 (估算成本: $0.0030)
+2025-05-26 11:44:39,698 - __main__ - INFO - process_all_jobs:541 - 等待 30 秒后处理下一个任务...
+2025-05-26 11:45:09,704 - __main__ - INFO - process_all_jobs:534 - 
+处理任务 7/63: batch_007
+2025-05-26 11:45:09,709 - __main__ - INFO - process_single_job:408 - 📦 处理任务 batch_007 (第1次尝试)
+2025-05-26 11:45:09,709 - __main__ - INFO - process_single_job:409 -    行范围: 121-140
+2025-05-26 11:45:09,709 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python create_safe_batch_input.py _csvs/content_MMSafeBench_cleaned.csv output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_007.jsonl --model gpt-4o-mini --start-row 120 --end-row 140
+2025-05-26 11:45:09,709 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 120秒
+2025-05-26 11:45:09,709 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:45:10,062 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 11:45:10,062 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:45:10,062 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:45:10,062 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:45:10,024 - INFO - 成功读取CSV文件，共1256行
+2025-05-26 11:45:10,024 - INFO - 处理范围: 第121行到第140行
+2025-05-26 11:45:10,030 - INFO - 处理进度: 10/20
+2025-05-26 11:45:10,036 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 11:45:10,062 - __main__ - INFO - run_safe_command:388 - ✅ 命令执行完成，返回码为0
+2025-05-26 11:45:10,063 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python batch_processor.py output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_007.jsonl --output-dir output/batch_results_content_MMSafeBench_cleaned_20250526_111044 --check-interval 30
+2025-05-26 11:45:10,063 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 600秒
+2025-05-26 11:45:10,063 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:46:14,162 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 64.1秒
+2025-05-26 11:46:14,162 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:46:14,162 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:46:14,162 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:45:10,352 - INFO - 开始批处理工作流程
+2025-05-26 11:45:12,614 - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-05-26 11:45:12,617 - INFO - 文件上传成功，文件ID: file-8hXe...
+2025-05-26 11:46:14,162 - __main__ - INFO - run_safe_command:377 - ✅ 检测到成功标识
+2025-05-26 11:46:14,163 - __main__ - WARNING - process_single_job:451 - ⚠️  batch_007 命令成功但未找到专用结果文件
+2025-05-26 11:46:14,163 - __main__ - INFO - process_single_job:452 - 📁 当前结果文件数量: 7
+2025-05-26 11:46:14,163 - __main__ - INFO - process_single_job:458 - 📄 检查最新结果文件: batch_results_batch_68348c88db0081908637440731f017db.jsonl
+2025-05-26 11:46:14,163 - __main__ - INFO - process_single_job:468 - ✅ 在最新文件中找到当前批次数据: ['row_120', 'row_121']
+2025-05-26 11:46:14,164 - cost_tracker - INFO - record_batch_cost:179 - 记录批次成本: batch_007 = $0.0030
+2025-05-26 11:46:14,164 - __main__ - INFO - process_single_job:503 - ✅ batch_007 完成 (估算成本: $0.0030)
+2025-05-26 11:46:14,164 - __main__ - INFO - process_all_jobs:541 - 等待 30 秒后处理下一个任务...
+2025-05-26 11:46:44,168 - __main__ - INFO - process_all_jobs:534 - 
+处理任务 8/63: batch_008
+2025-05-26 11:46:44,172 - __main__ - INFO - process_single_job:408 - 📦 处理任务 batch_008 (第1次尝试)
+2025-05-26 11:46:44,172 - __main__ - INFO - process_single_job:409 -    行范围: 141-160
+2025-05-26 11:46:44,172 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python create_safe_batch_input.py _csvs/content_MMSafeBench_cleaned.csv output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_008.jsonl --model gpt-4o-mini --start-row 140 --end-row 160
+2025-05-26 11:46:44,172 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 120秒
+2025-05-26 11:46:44,172 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:46:44,438 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 11:46:44,438 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:46:44,438 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:46:44,438 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:46:44,396 - INFO - 成功读取CSV文件，共1256行
+2025-05-26 11:46:44,396 - INFO - 处理范围: 第141行到第160行
+2025-05-26 11:46:44,403 - INFO - 处理进度: 10/20
+2025-05-26 11:46:44,411 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 11:46:44,438 - __main__ - INFO - run_safe_command:388 - ✅ 命令执行完成，返回码为0
+2025-05-26 11:46:44,438 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python batch_processor.py output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_008.jsonl --output-dir output/batch_results_content_MMSafeBench_cleaned_20250526_111044 --check-interval 30
+2025-05-26 11:46:44,438 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 600秒
+2025-05-26 11:46:44,438 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:47:48,211 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 63.8秒
+2025-05-26 11:47:48,213 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:47:48,213 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:47:48,213 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:46:44,636 - INFO - 开始批处理工作流程
+2025-05-26 11:46:46,927 - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-05-26 11:46:46,928 - INFO - 文件上传成功，文件ID: file-Q7n5...
+2025-05-26 11:47:48,213 - __main__ - INFO - run_safe_command:377 - ✅ 检测到成功标识
+2025-05-26 11:47:48,214 - __main__ - WARNING - process_single_job:451 - ⚠️  batch_008 命令成功但未找到专用结果文件
+2025-05-26 11:47:48,214 - __main__ - INFO - process_single_job:452 - 📁 当前结果文件数量: 8
+2025-05-26 11:47:48,214 - __main__ - INFO - process_single_job:458 - 📄 检查最新结果文件: batch_results_batch_68348ce7054c819088fd68a360f62d23.jsonl
+2025-05-26 11:47:48,214 - __main__ - INFO - process_single_job:468 - ✅ 在最新文件中找到当前批次数据: ['row_140', 'row_141']
+2025-05-26 11:47:48,214 - cost_tracker - INFO - record_batch_cost:179 - 记录批次成本: batch_008 = $0.0030
+2025-05-26 11:47:48,215 - __main__ - INFO - process_single_job:503 - ✅ batch_008 完成 (估算成本: $0.0030)
+2025-05-26 11:47:48,215 - __main__ - INFO - process_all_jobs:541 - 等待 30 秒后处理下一个任务...
+2025-05-26 11:48:18,220 - __main__ - INFO - process_all_jobs:534 - 
+处理任务 9/63: batch_009
+2025-05-26 11:48:18,227 - __main__ - INFO - process_single_job:408 - 📦 处理任务 batch_009 (第1次尝试)
+2025-05-26 11:48:18,227 - __main__ - INFO - process_single_job:409 -    行范围: 161-180
+2025-05-26 11:48:18,227 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python create_safe_batch_input.py _csvs/content_MMSafeBench_cleaned.csv output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_009.jsonl --model gpt-4o-mini --start-row 160 --end-row 180
+2025-05-26 11:48:18,228 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 120秒
+2025-05-26 11:48:18,228 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:48:18,576 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 11:48:18,576 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:48:18,576 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:48:18,576 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:48:18,529 - INFO - 成功读取CSV文件，共1256行
+2025-05-26 11:48:18,529 - INFO - 处理范围: 第161行到第180行
+2025-05-26 11:48:18,536 - INFO - 处理进度: 10/20
+2025-05-26 11:48:18,543 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 11:48:18,576 - __main__ - INFO - run_safe_command:388 - ✅ 命令执行完成，返回码为0
+2025-05-26 11:48:18,576 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python batch_processor.py output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_009.jsonl --output-dir output/batch_results_content_MMSafeBench_cleaned_20250526_111044 --check-interval 30
+2025-05-26 11:48:18,576 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 600秒
+2025-05-26 11:48:18,576 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:50:22,564 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 124.0秒
+2025-05-26 11:50:22,565 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:50:22,565 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:50:22,565 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:48:18,851 - INFO - 开始批处理工作流程
+2025-05-26 11:48:20,734 - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-05-26 11:48:20,735 - INFO - 文件上传成功，文件ID: file-9o4n...
+2025-05-26 11:50:22,565 - __main__ - INFO - run_safe_command:377 - ✅ 检测到成功标识
+2025-05-26 11:50:22,565 - __main__ - WARNING - process_single_job:451 - ⚠️  batch_009 命令成功但未找到专用结果文件
+2025-05-26 11:50:22,565 - __main__ - INFO - process_single_job:452 - 📁 当前结果文件数量: 9
+2025-05-26 11:50:22,565 - __main__ - INFO - process_single_job:458 - 📄 检查最新结果文件: batch_results_batch_68348d44e1088190a608ceda87158e4a.jsonl
+2025-05-26 11:50:22,566 - __main__ - INFO - process_single_job:468 - ✅ 在最新文件中找到当前批次数据: ['row_160']
+2025-05-26 11:50:22,566 - cost_tracker - INFO - record_batch_cost:179 - 记录批次成本: batch_009 = $0.0030
+2025-05-26 11:50:22,567 - __main__ - INFO - process_single_job:503 - ✅ batch_009 完成 (估算成本: $0.0030)
+2025-05-26 11:50:22,567 - __main__ - INFO - process_all_jobs:541 - 等待 30 秒后处理下一个任务...
+2025-05-26 11:50:52,572 - __main__ - INFO - process_all_jobs:534 - 
+处理任务 10/63: batch_010
+2025-05-26 11:50:52,574 - __main__ - INFO - process_single_job:408 - 📦 处理任务 batch_010 (第1次尝试)
+2025-05-26 11:50:52,575 - __main__ - INFO - process_single_job:409 -    行范围: 181-200
+2025-05-26 11:50:52,575 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python create_safe_batch_input.py _csvs/content_MMSafeBench_cleaned.csv output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_010.jsonl --model gpt-4o-mini --start-row 180 --end-row 200
+2025-05-26 11:50:52,575 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 120秒
+2025-05-26 11:50:52,575 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:50:52,920 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 11:50:52,920 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:50:52,920 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:50:52,920 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:50:52,874 - INFO - 成功读取CSV文件，共1256行
+2025-05-26 11:50:52,874 - INFO - 处理范围: 第181行到第200行
+2025-05-26 11:50:52,881 - INFO - 处理进度: 10/20
+2025-05-26 11:50:52,889 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 11:50:52,920 - __main__ - INFO - run_safe_command:388 - ✅ 命令执行完成，返回码为0
+2025-05-26 11:50:52,920 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python batch_processor.py output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_010.jsonl --output-dir output/batch_results_content_MMSafeBench_cleaned_20250526_111044 --check-interval 30
+2025-05-26 11:50:52,920 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 600秒
+2025-05-26 11:50:52,920 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:56:29,456 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 336.5秒
+2025-05-26 11:56:29,458 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:56:29,458 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:56:29,458 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:50:53,200 - INFO - 开始批处理工作流程
+2025-05-26 11:50:56,214 - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-05-26 11:50:56,217 - INFO - 文件上传成功，文件ID: file-MtFw...
+2025-05-26 11:56:29,458 - __main__ - INFO - run_safe_command:377 - ✅ 检测到成功标识
+2025-05-26 11:56:29,459 - __main__ - WARNING - process_single_job:451 - ⚠️  batch_010 命令成功但未找到专用结果文件
+2025-05-26 11:56:29,459 - __main__ - INFO - process_single_job:452 - 📁 当前结果文件数量: 10
+2025-05-26 11:56:29,459 - __main__ - INFO - process_single_job:458 - 📄 检查最新结果文件: batch_results_batch_68348de04d088190a6a041726fb75ff1.jsonl
+2025-05-26 11:56:29,459 - __main__ - INFO - process_single_job:468 - ✅ 在最新文件中找到当前批次数据: ['row_180', 'row_181']
+2025-05-26 11:56:29,460 - cost_tracker - INFO - record_batch_cost:179 - 记录批次成本: batch_010 = $0.0030
+2025-05-26 11:56:29,460 - __main__ - INFO - process_single_job:503 - ✅ batch_010 完成 (估算成本: $0.0030)
+2025-05-26 11:56:29,460 - __main__ - INFO - process_all_jobs:541 - 等待 30 秒后处理下一个任务...
+2025-05-26 11:56:59,466 - __main__ - INFO - process_all_jobs:534 - 
+处理任务 11/63: batch_011
+2025-05-26 11:56:59,470 - __main__ - INFO - process_single_job:408 - 📦 处理任务 batch_011 (第1次尝试)
+2025-05-26 11:56:59,470 - __main__ - INFO - process_single_job:409 -    行范围: 201-220
+2025-05-26 11:56:59,470 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python create_safe_batch_input.py _csvs/content_MMSafeBench_cleaned.csv output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_011.jsonl --model gpt-4o-mini --start-row 200 --end-row 220
+2025-05-26 11:56:59,470 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 120秒
+2025-05-26 11:56:59,471 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 11:56:59,799 - __main__ - INFO - run_safe_command:299 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 11:56:59,800 - __main__ - INFO - run_safe_command:300 - 🔍 返回码: 0
+2025-05-26 11:56:59,800 - __main__ - DEBUG - run_safe_command:306 - 📤 标准输出: ...
+2025-05-26 11:56:59,800 - __main__ - DEBUG - run_safe_command:307 - 📤 错误输出: 2025-05-26 11:56:59,759 - INFO - 成功读取CSV文件，共1256行
+2025-05-26 11:56:59,759 - INFO - 处理范围: 第201行到第220行
+2025-05-26 11:56:59,765 - INFO - 处理进度: 10/20
+2025-05-26 11:56:59,772 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 11:56:59,800 - __main__ - INFO - run_safe_command:388 - ✅ 命令执行完成，返回码为0
+2025-05-26 11:56:59,800 - __main__ - INFO - run_safe_command:283 - 🖥️  执行命令: python batch_processor.py output/batch_results_content_MMSafeBench_cleaned_20250526_111044/batch_011.jsonl --output-dir output/batch_results_content_MMSafeBench_cleaned_20250526_111044 --check-interval 30
+2025-05-26 11:56:59,800 - __main__ - INFO - run_safe_command:284 - ⏱️  超时设置: 600秒
+2025-05-26 11:56:59,800 - __main__ - INFO - run_safe_command:288 - 🚀 开始执行命令...
+2025-05-26 12:06:59,811 - __main__ - ERROR - run_safe_command:396 - ⏰ 命令执行超时 (600秒)
+2025-05-26 12:06:59,814 - __main__ - ERROR - process_single_job:514 - ❌ batch_011 失败: 命令超时 (600秒)
+2025-05-26 12:06:59,814 - __main__ - INFO - process_all_jobs:541 - 等待 60 秒后处理下一个任务...

@@ -1,7 +1,7 @@
-batch_results_*
+# batch_results_*
 batch_temp_*
 *.jsonl
-# *.csv
+*.csv
 image/**/*.jpeg
 image/**/*.jpg
 image/**/*.png

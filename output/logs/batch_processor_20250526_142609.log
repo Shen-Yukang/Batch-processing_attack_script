@@ -1,0 +1,1667 @@
+2025-05-26 14:26:09,972 - __main__ - INFO - setup_enhanced_logging:58 - 📝 详细日志保存到: output/logs/batch_processor_20250526_142609.log
+2025-05-26 14:26:09,972 - __main__ - INFO - main:859 - 🚀 健壮的批处理器 - 增强版
+2025-05-26 14:26:09,972 - __main__ - INFO - main:860 - ================================================================================
+2025-05-26 14:26:09,972 - __main__ - INFO - main:880 - 📊 选择的CSV文件: resume_data_20250526_142222.csv
+2025-05-26 14:26:09,973 - __main__ - INFO - main:883 - 📈 文件统计: 1056 行数据, 0.20 MB
+2025-05-26 14:26:09,973 - __main__ - INFO - main:888 - 📊 将处理全部 1056 行数据
+2025-05-26 14:26:09,973 - __main__ - INFO - main:896 - 📋 处理计划:
+2025-05-26 14:26:09,973 - __main__ - INFO - main:897 -    - 批次大小: 20
+2025-05-26 14:26:09,973 - __main__ - INFO - main:898 -    - 预计批次数: 53
+2025-05-26 14:26:09,973 - __main__ - INFO - main:899 -    - 使用模型: gpt-4o-mini
+2025-05-26 14:26:09,973 - __main__ - INFO - main:900 -    - 估算成本: $3.18
+2025-05-26 14:26:13,632 - __main__ - INFO - __init__:211 - 📁 输出目录: output/batch_results_resume_data_20250526_142222_20250526_142613
+2025-05-26 14:26:13,634 - __main__ - INFO - create_jobs:280 - 创建了 53 个批处理任务
+2025-05-26 14:26:13,634 - __main__ - INFO - process_all_jobs:559 - ================================================================================
+2025-05-26 14:26:13,634 - __main__ - INFO - process_all_jobs:560 - 开始处理 53 个批处理任务
+2025-05-26 14:26:13,634 - __main__ - INFO - process_all_jobs:561 - ================================================================================
+2025-05-26 14:26:13,634 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 1/53: batch_001
+2025-05-26 14:26:13,634 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_001 (第1次尝试)
+2025-05-26 14:26:13,634 - __main__ - INFO - process_single_job:412 -    行范围: 1-20
+2025-05-26 14:26:13,634 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_001.jsonl --model gpt-4o-mini --start-row 0 --end-row 20
+2025-05-26 14:26:13,634 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 14:26:13,634 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 14:26:14,068 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 14:26:14,068 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 14:26:14,068 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 14:26:14,068 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 14:26:14,019 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 14:26:14,019 - INFO - 处理范围: 第1行到第20行
+2025-05-26 14:26:14,023 - INFO - 处理进度: 10/20
+2025-05-26 14:26:14,027 - INFO - 处理进度: 20/20
+2025-05-26 1...
+2025-05-26 14:26:14,068 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 14:26:14,068 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_001.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 14:26:14,068 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 14:26:14,068 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 14:26:14,364 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 14:26:14,364 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 14:26:14,364 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 14:26:14,364 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 14:26:14,316 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 14:26:14,364 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 14:26:14,364 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_001 失败原因:
+2025-05-26 14:26:14,364 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 14:26:14,365 - __main__ - ERROR - process_single_job:554 - ❌ batch_001 失败: 2025-05-26 14:26:14,316 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 14:26:14,365 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 14:30:14,372 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 2/53: batch_002
+2025-05-26 14:30:14,375 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_002 (第1次尝试)
+2025-05-26 14:30:14,376 - __main__ - INFO - process_single_job:412 -    行范围: 21-40
+2025-05-26 14:30:14,376 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_002.jsonl --model gpt-4o-mini --start-row 20 --end-row 40
+2025-05-26 14:30:14,376 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 14:30:14,376 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 14:30:14,854 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 14:30:14,854 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 14:30:14,854 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 14:30:14,854 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 14:30:14,806 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 14:30:14,806 - INFO - 处理范围: 第21行到第40行
+2025-05-26 14:30:14,813 - INFO - 处理进度: 10/20
+2025-05-26 14:30:14,820 - INFO - 处理进度: 20/20
+2025-05-26 ...
+2025-05-26 14:30:14,854 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 14:30:14,854 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_002.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 14:30:14,854 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 14:30:14,854 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 14:30:15,199 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 14:30:15,199 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 14:30:15,199 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 14:30:15,199 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 14:30:15,170 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 14:30:15,199 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 14:30:15,199 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_002 失败原因:
+2025-05-26 14:30:15,199 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 14:30:15,200 - __main__ - ERROR - process_single_job:554 - ❌ batch_002 失败: 2025-05-26 14:30:15,170 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 14:30:15,200 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 14:34:15,212 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 3/53: batch_003
+2025-05-26 14:34:15,215 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_003 (第1次尝试)
+2025-05-26 14:34:15,215 - __main__ - INFO - process_single_job:412 -    行范围: 41-60
+2025-05-26 14:34:15,215 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_003.jsonl --model gpt-4o-mini --start-row 40 --end-row 60
+2025-05-26 14:34:15,216 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 14:34:15,216 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 14:34:15,666 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 14:34:15,666 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 14:34:15,666 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 14:34:15,666 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 14:34:15,616 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 14:34:15,616 - INFO - 处理范围: 第41行到第60行
+2025-05-26 14:34:15,623 - INFO - 处理进度: 10/20
+2025-05-26 14:34:15,630 - INFO - 处理进度: 20/20
+2025-05-26 ...
+2025-05-26 14:34:15,666 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 14:34:15,666 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_003.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 14:34:15,666 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 14:34:15,667 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 14:34:16,003 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 14:34:16,003 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 14:34:16,003 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 14:34:16,003 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 14:34:15,974 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 14:34:16,003 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 14:34:16,003 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_003 失败原因:
+2025-05-26 14:34:16,003 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 14:34:16,004 - __main__ - ERROR - process_single_job:554 - ❌ batch_003 失败: 2025-05-26 14:34:15,974 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 14:34:16,004 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 14:38:16,015 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 4/53: batch_004
+2025-05-26 14:38:16,019 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_004 (第1次尝试)
+2025-05-26 14:38:16,019 - __main__ - INFO - process_single_job:412 -    行范围: 61-80
+2025-05-26 14:38:16,019 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_004.jsonl --model gpt-4o-mini --start-row 60 --end-row 80
+2025-05-26 14:38:16,019 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 14:38:16,020 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 14:38:16,477 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 14:38:16,477 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 14:38:16,477 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 14:38:16,477 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 14:38:16,427 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 14:38:16,428 - INFO - 处理范围: 第61行到第80行
+2025-05-26 14:38:16,435 - INFO - 处理进度: 10/20
+2025-05-26 14:38:16,443 - INFO - 处理进度: 20/20
+2025-05-26 ...
+2025-05-26 14:38:16,477 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 14:38:16,477 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_004.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 14:38:16,477 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 14:38:16,477 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 14:38:16,806 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 14:38:16,806 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 14:38:16,806 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 14:38:16,806 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 14:38:16,777 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 14:38:16,806 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 14:38:16,806 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_004 失败原因:
+2025-05-26 14:38:16,806 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 14:38:16,807 - __main__ - ERROR - process_single_job:554 - ❌ batch_004 失败: 2025-05-26 14:38:16,777 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 14:38:16,807 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 14:42:16,766 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 5/53: batch_005
+2025-05-26 14:42:16,769 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_005 (第1次尝试)
+2025-05-26 14:42:16,769 - __main__ - INFO - process_single_job:412 -    行范围: 81-100
+2025-05-26 14:42:16,770 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_005.jsonl --model gpt-4o-mini --start-row 80 --end-row 100
+2025-05-26 14:42:16,770 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 14:42:16,770 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 14:42:17,300 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 14:42:17,300 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 14:42:17,300 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 14:42:17,300 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 14:42:17,254 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 14:42:17,254 - INFO - 处理范围: 第81行到第100行
+2025-05-26 14:42:17,260 - INFO - 处理进度: 10/20
+2025-05-26 14:42:17,267 - INFO - 处理进度: 20/20
+2025-05-26...
+2025-05-26 14:42:17,300 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 14:42:17,300 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_005.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 14:42:17,300 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 14:42:17,301 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 14:42:17,719 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 14:42:17,719 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 14:42:17,719 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 14:42:17,719 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 14:42:17,687 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 14:42:17,719 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 14:42:17,719 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_005 失败原因:
+2025-05-26 14:42:17,719 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 14:42:17,719 - __main__ - ERROR - process_single_job:554 - ❌ batch_005 失败: 2025-05-26 14:42:17,687 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 14:42:17,719 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 14:46:17,727 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 6/53: batch_006
+2025-05-26 14:46:17,733 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_006 (第1次尝试)
+2025-05-26 14:46:17,733 - __main__ - INFO - process_single_job:412 -    行范围: 101-120
+2025-05-26 14:46:17,733 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_006.jsonl --model gpt-4o-mini --start-row 100 --end-row 120
+2025-05-26 14:46:17,733 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 14:46:17,733 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 14:46:18,282 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 14:46:18,282 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 14:46:18,282 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 14:46:18,282 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 14:46:18,232 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 14:46:18,232 - INFO - 处理范围: 第101行到第120行
+2025-05-26 14:46:18,238 - INFO - 处理进度: 10/20
+2025-05-26 14:46:18,246 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 14:46:18,282 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 14:46:18,282 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_006.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 14:46:18,282 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 14:46:18,282 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 14:46:18,741 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 14:46:18,741 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 14:46:18,741 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 14:46:18,741 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 14:46:18,705 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 14:46:18,741 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 14:46:18,741 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_006 失败原因:
+2025-05-26 14:46:18,741 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 14:46:18,742 - __main__ - ERROR - process_single_job:554 - ❌ batch_006 失败: 2025-05-26 14:46:18,705 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 14:46:18,742 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 14:50:18,749 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 7/53: batch_007
+2025-05-26 14:50:18,754 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_007 (第1次尝试)
+2025-05-26 14:50:18,754 - __main__ - INFO - process_single_job:412 -    行范围: 121-140
+2025-05-26 14:50:18,754 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_007.jsonl --model gpt-4o-mini --start-row 120 --end-row 140
+2025-05-26 14:50:18,754 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 14:50:18,755 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 14:50:19,305 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 14:50:19,305 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 14:50:19,305 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 14:50:19,305 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 14:50:19,259 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 14:50:19,259 - INFO - 处理范围: 第121行到第140行
+2025-05-26 14:50:19,266 - INFO - 处理进度: 10/20
+2025-05-26 14:50:19,273 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 14:50:19,305 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 14:50:19,305 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_007.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 14:50:19,305 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 14:50:19,305 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 14:50:19,711 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 14:50:19,711 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 14:50:19,711 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 14:50:19,711 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 14:50:19,681 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 14:50:19,712 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 14:50:19,712 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_007 失败原因:
+2025-05-26 14:50:19,712 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 14:50:19,712 - __main__ - ERROR - process_single_job:554 - ❌ batch_007 失败: 2025-05-26 14:50:19,681 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 14:50:19,712 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 14:54:19,720 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 8/53: batch_008
+2025-05-26 14:54:19,725 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_008 (第1次尝试)
+2025-05-26 14:54:19,725 - __main__ - INFO - process_single_job:412 -    行范围: 141-160
+2025-05-26 14:54:19,725 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_008.jsonl --model gpt-4o-mini --start-row 140 --end-row 160
+2025-05-26 14:54:19,725 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 14:54:19,725 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 14:54:20,198 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 14:54:20,198 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 14:54:20,199 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 14:54:20,199 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 14:54:20,151 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 14:54:20,151 - INFO - 处理范围: 第141行到第160行
+2025-05-26 14:54:20,157 - INFO - 处理进度: 10/20
+2025-05-26 14:54:20,166 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 14:54:20,199 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 14:54:20,199 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_008.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 14:54:20,199 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 14:54:20,199 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 14:54:20,532 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 14:54:20,532 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 14:54:20,533 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 14:54:20,533 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 14:54:20,503 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 14:54:20,533 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 14:54:20,533 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_008 失败原因:
+2025-05-26 14:54:20,533 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 14:54:20,533 - __main__ - ERROR - process_single_job:554 - ❌ batch_008 失败: 2025-05-26 14:54:20,503 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 14:54:20,533 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 14:58:20,541 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 9/53: batch_009
+2025-05-26 14:58:20,546 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_009 (第1次尝试)
+2025-05-26 14:58:20,546 - __main__ - INFO - process_single_job:412 -    行范围: 161-180
+2025-05-26 14:58:20,546 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_009.jsonl --model gpt-4o-mini --start-row 160 --end-row 180
+2025-05-26 14:58:20,547 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 14:58:20,547 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 14:58:21,052 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 14:58:21,052 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 14:58:21,052 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 14:58:21,052 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 14:58:21,001 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 14:58:21,001 - INFO - 处理范围: 第161行到第180行
+2025-05-26 14:58:21,009 - INFO - 处理进度: 10/20
+2025-05-26 14:58:21,016 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 14:58:21,052 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 14:58:21,052 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_009.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 14:58:21,052 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 14:58:21,052 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 14:58:21,399 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 14:58:21,399 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 14:58:21,399 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 14:58:21,399 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 14:58:21,367 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 14:58:21,399 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 14:58:21,399 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_009 失败原因:
+2025-05-26 14:58:21,399 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 14:58:21,400 - __main__ - ERROR - process_single_job:554 - ❌ batch_009 失败: 2025-05-26 14:58:21,367 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 14:58:21,400 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 15:02:21,402 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 10/53: batch_010
+2025-05-26 15:02:21,408 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_010 (第1次尝试)
+2025-05-26 15:02:21,408 - __main__ - INFO - process_single_job:412 -    行范围: 181-200
+2025-05-26 15:02:21,413 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_010.jsonl --model gpt-4o-mini --start-row 180 --end-row 200
+2025-05-26 15:02:21,413 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 15:02:21,413 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:02:21,860 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 15:02:21,860 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:02:21,860 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:02:21,860 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:02:21,808 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 15:02:21,809 - INFO - 处理范围: 第181行到第200行
+2025-05-26 15:02:21,817 - INFO - 处理进度: 10/20
+2025-05-26 15:02:21,825 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 15:02:21,860 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 15:02:21,860 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_010.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 15:02:21,860 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 15:02:21,860 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:02:22,114 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 15:02:22,114 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:02:22,114 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:02:22,114 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:02:22,083 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 15:02:22,115 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 15:02:22,115 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_010 失败原因:
+2025-05-26 15:02:22,115 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 15:02:22,115 - __main__ - ERROR - process_single_job:554 - ❌ batch_010 失败: 2025-05-26 15:02:22,083 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 15:02:22,115 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 15:06:22,118 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 11/53: batch_011
+2025-05-26 15:06:22,121 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_011 (第1次尝试)
+2025-05-26 15:06:22,121 - __main__ - INFO - process_single_job:412 -    行范围: 201-220
+2025-05-26 15:06:22,121 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_011.jsonl --model gpt-4o-mini --start-row 200 --end-row 220
+2025-05-26 15:06:22,121 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 15:06:22,122 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:06:22,590 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 15:06:22,590 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:06:22,590 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:06:22,590 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:06:22,536 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 15:06:22,536 - INFO - 处理范围: 第201行到第220行
+2025-05-26 15:06:22,544 - INFO - 处理进度: 10/20
+2025-05-26 15:06:22,552 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 15:06:22,590 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 15:06:22,590 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_011.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 15:06:22,590 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 15:06:22,590 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:06:22,847 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 15:06:22,847 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:06:22,847 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:06:22,847 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:06:22,815 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 15:06:22,847 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 15:06:22,847 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_011 失败原因:
+2025-05-26 15:06:22,847 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 15:06:22,848 - __main__ - ERROR - process_single_job:554 - ❌ batch_011 失败: 2025-05-26 15:06:22,815 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 15:06:22,848 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 15:10:22,851 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 12/53: batch_012
+2025-05-26 15:10:22,853 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_012 (第1次尝试)
+2025-05-26 15:10:22,853 - __main__ - INFO - process_single_job:412 -    行范围: 221-240
+2025-05-26 15:10:22,853 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_012.jsonl --model gpt-4o-mini --start-row 220 --end-row 240
+2025-05-26 15:10:22,854 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 15:10:22,854 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:10:23,316 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 15:10:23,316 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:10:23,316 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:10:23,316 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:10:23,259 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 15:10:23,259 - INFO - 处理范围: 第221行到第240行
+2025-05-26 15:10:23,267 - INFO - 处理进度: 10/20
+2025-05-26 15:10:23,275 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 15:10:23,316 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 15:10:23,316 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_012.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 15:10:23,316 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 15:10:23,316 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:10:23,614 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 15:10:23,614 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:10:23,614 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:10:23,614 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:10:23,572 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 15:10:23,614 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 15:10:23,614 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_012 失败原因:
+2025-05-26 15:10:23,614 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 15:10:23,615 - __main__ - ERROR - process_single_job:554 - ❌ batch_012 失败: 2025-05-26 15:10:23,572 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 15:10:23,615 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 15:14:23,664 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 13/53: batch_013
+2025-05-26 15:14:23,667 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_013 (第1次尝试)
+2025-05-26 15:14:23,667 - __main__ - INFO - process_single_job:412 -    行范围: 241-260
+2025-05-26 15:14:23,667 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_013.jsonl --model gpt-4o-mini --start-row 240 --end-row 260
+2025-05-26 15:14:23,667 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 15:14:23,667 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:14:24,136 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 15:14:24,136 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:14:24,136 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:14:24,136 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:14:24,086 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 15:14:24,086 - INFO - 处理范围: 第241行到第260行
+2025-05-26 15:14:24,094 - INFO - 处理进度: 10/20
+2025-05-26 15:14:24,102 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 15:14:24,137 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 15:14:24,137 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_013.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 15:14:24,137 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 15:14:24,137 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:14:24,388 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 15:14:24,388 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:14:24,388 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:14:24,388 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:14:24,357 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 15:14:24,388 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 15:14:24,388 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_013 失败原因:
+2025-05-26 15:14:24,388 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 15:14:24,389 - __main__ - ERROR - process_single_job:554 - ❌ batch_013 失败: 2025-05-26 15:14:24,357 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 15:14:24,389 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 15:18:24,392 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 14/53: batch_014
+2025-05-26 15:18:24,393 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_014 (第1次尝试)
+2025-05-26 15:18:24,393 - __main__ - INFO - process_single_job:412 -    行范围: 261-280
+2025-05-26 15:18:24,393 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_014.jsonl --model gpt-4o-mini --start-row 260 --end-row 280
+2025-05-26 15:18:24,393 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 15:18:24,394 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:18:24,837 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 15:18:24,837 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:18:24,837 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:18:24,837 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:18:24,789 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 15:18:24,789 - INFO - 处理范围: 第261行到第280行
+2025-05-26 15:18:24,796 - INFO - 处理进度: 10/20
+2025-05-26 15:18:24,803 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 15:18:24,837 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 15:18:24,837 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_014.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 15:18:24,838 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 15:18:24,838 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:18:25,097 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 15:18:25,097 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:18:25,097 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:18:25,097 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:18:25,065 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 15:18:25,097 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 15:18:25,097 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_014 失败原因:
+2025-05-26 15:18:25,097 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 15:18:25,098 - __main__ - ERROR - process_single_job:554 - ❌ batch_014 失败: 2025-05-26 15:18:25,065 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 15:18:25,098 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 15:22:25,104 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 15/53: batch_015
+2025-05-26 15:22:25,107 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_015 (第1次尝试)
+2025-05-26 15:22:25,107 - __main__ - INFO - process_single_job:412 -    行范围: 281-300
+2025-05-26 15:22:25,107 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_015.jsonl --model gpt-4o-mini --start-row 280 --end-row 300
+2025-05-26 15:22:25,108 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 15:22:25,108 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:22:25,553 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 15:22:25,553 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:22:25,553 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:22:25,553 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:22:25,505 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 15:22:25,505 - INFO - 处理范围: 第281行到第300行
+2025-05-26 15:22:25,513 - INFO - 处理进度: 10/20
+2025-05-26 15:22:25,520 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 15:22:25,553 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 15:22:25,553 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_015.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 15:22:25,554 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 15:22:25,554 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:22:25,810 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 15:22:25,810 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:22:25,810 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:22:25,810 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:22:25,778 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 15:22:25,810 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 15:22:25,811 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_015 失败原因:
+2025-05-26 15:22:25,811 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 15:22:25,811 - __main__ - ERROR - process_single_job:554 - ❌ batch_015 失败: 2025-05-26 15:22:25,778 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 15:22:25,811 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 15:26:25,817 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 16/53: batch_016
+2025-05-26 15:26:25,820 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_016 (第1次尝试)
+2025-05-26 15:26:25,820 - __main__ - INFO - process_single_job:412 -    行范围: 301-320
+2025-05-26 15:26:25,820 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_016.jsonl --model gpt-4o-mini --start-row 300 --end-row 320
+2025-05-26 15:26:25,820 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 15:26:25,820 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:26:26,266 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 15:26:26,266 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:26:26,267 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:26:26,267 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:26:26,223 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 15:26:26,223 - INFO - 处理范围: 第301行到第320行
+2025-05-26 15:26:26,228 - INFO - 处理进度: 10/20
+2025-05-26 15:26:26,233 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 15:26:26,267 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 15:26:26,267 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_016.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 15:26:26,267 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 15:26:26,267 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:26:26,534 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 15:26:26,534 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:26:26,534 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:26:26,534 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:26:26,501 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 15:26:26,534 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 15:26:26,534 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_016 失败原因:
+2025-05-26 15:26:26,534 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 15:26:26,535 - __main__ - ERROR - process_single_job:554 - ❌ batch_016 失败: 2025-05-26 15:26:26,501 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 15:26:26,535 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 15:30:26,541 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 17/53: batch_017
+2025-05-26 15:30:26,545 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_017 (第1次尝试)
+2025-05-26 15:30:26,545 - __main__ - INFO - process_single_job:412 -    行范围: 321-340
+2025-05-26 15:30:26,545 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_017.jsonl --model gpt-4o-mini --start-row 320 --end-row 340
+2025-05-26 15:30:26,546 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 15:30:26,546 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:30:26,998 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 15:30:26,998 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:30:26,998 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:30:26,999 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:30:26,955 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 15:30:26,955 - INFO - 处理范围: 第321行到第340行
+2025-05-26 15:30:26,959 - INFO - 处理进度: 10/20
+2025-05-26 15:30:26,963 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 15:30:26,999 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 15:30:26,999 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_017.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 15:30:26,999 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 15:30:26,999 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:30:27,262 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 15:30:27,262 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:30:27,262 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:30:27,262 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:30:27,229 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 15:30:27,262 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 15:30:27,262 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_017 失败原因:
+2025-05-26 15:30:27,262 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 15:30:27,262 - __main__ - ERROR - process_single_job:554 - ❌ batch_017 失败: 2025-05-26 15:30:27,229 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 15:30:27,262 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 15:34:27,268 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 18/53: batch_018
+2025-05-26 15:34:27,271 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_018 (第1次尝试)
+2025-05-26 15:34:27,271 - __main__ - INFO - process_single_job:412 -    行范围: 341-360
+2025-05-26 15:34:27,271 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_018.jsonl --model gpt-4o-mini --start-row 340 --end-row 360
+2025-05-26 15:34:27,271 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 15:34:27,271 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:34:27,692 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 15:34:27,692 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:34:27,693 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:34:27,693 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:34:27,649 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 15:34:27,649 - INFO - 处理范围: 第341行到第360行
+2025-05-26 15:34:27,653 - INFO - 处理进度: 10/20
+2025-05-26 15:34:27,658 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 15:34:27,693 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 15:34:27,693 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_018.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 15:34:27,693 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 15:34:27,693 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:34:27,955 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 15:34:27,956 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:34:27,956 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:34:27,956 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:34:27,922 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 15:34:27,956 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 15:34:27,956 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_018 失败原因:
+2025-05-26 15:34:27,956 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 15:34:27,956 - __main__ - ERROR - process_single_job:554 - ❌ batch_018 失败: 2025-05-26 15:34:27,922 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 15:34:27,956 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 15:38:27,962 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 19/53: batch_019
+2025-05-26 15:38:27,963 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_019 (第1次尝试)
+2025-05-26 15:38:27,963 - __main__ - INFO - process_single_job:412 -    行范围: 361-380
+2025-05-26 15:38:27,963 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_019.jsonl --model gpt-4o-mini --start-row 360 --end-row 380
+2025-05-26 15:38:27,963 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 15:38:27,963 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:38:28,444 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 15:38:28,444 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:38:28,444 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:38:28,444 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:38:28,398 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 15:38:28,398 - INFO - 处理范围: 第361行到第380行
+2025-05-26 15:38:28,402 - INFO - 处理进度: 10/20
+2025-05-26 15:38:28,407 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 15:38:28,444 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 15:38:28,444 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_019.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 15:38:28,444 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 15:38:28,444 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:38:28,707 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 15:38:28,707 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:38:28,707 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:38:28,708 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:38:28,674 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 15:38:28,708 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 15:38:28,708 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_019 失败原因:
+2025-05-26 15:38:28,708 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 15:38:28,708 - __main__ - ERROR - process_single_job:554 - ❌ batch_019 失败: 2025-05-26 15:38:28,674 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 15:38:28,708 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 15:42:28,694 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 20/53: batch_020
+2025-05-26 15:42:28,697 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_020 (第1次尝试)
+2025-05-26 15:42:28,697 - __main__ - INFO - process_single_job:412 -    行范围: 381-400
+2025-05-26 15:42:28,697 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_020.jsonl --model gpt-4o-mini --start-row 380 --end-row 400
+2025-05-26 15:42:28,697 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 15:42:28,697 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:42:29,121 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 15:42:29,121 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:42:29,121 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:42:29,121 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:42:29,075 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 15:42:29,075 - INFO - 处理范围: 第381行到第400行
+2025-05-26 15:42:29,079 - INFO - 处理进度: 10/20
+2025-05-26 15:42:29,087 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 15:42:29,121 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 15:42:29,121 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_020.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 15:42:29,121 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 15:42:29,121 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:42:29,372 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 15:42:29,372 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:42:29,372 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:42:29,373 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:42:29,341 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 15:42:29,373 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 15:42:29,373 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_020 失败原因:
+2025-05-26 15:42:29,373 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 15:42:29,373 - __main__ - ERROR - process_single_job:554 - ❌ batch_020 失败: 2025-05-26 15:42:29,341 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 15:42:29,373 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 15:46:29,376 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 21/53: batch_021
+2025-05-26 15:46:29,380 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_021 (第1次尝试)
+2025-05-26 15:46:29,380 - __main__ - INFO - process_single_job:412 -    行范围: 401-420
+2025-05-26 15:46:29,380 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_021.jsonl --model gpt-4o-mini --start-row 400 --end-row 420
+2025-05-26 15:46:29,380 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 15:46:29,380 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:46:29,810 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 15:46:29,810 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:46:29,810 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:46:29,810 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:46:29,765 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 15:46:29,765 - INFO - 处理范围: 第401行到第420行
+2025-05-26 15:46:29,769 - INFO - 处理进度: 10/20
+2025-05-26 15:46:29,773 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 15:46:29,810 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 15:46:29,810 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_021.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 15:46:29,810 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 15:46:29,810 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:46:30,064 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 15:46:30,064 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:46:30,064 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:46:30,064 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:46:30,032 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 15:46:30,064 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 15:46:30,064 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_021 失败原因:
+2025-05-26 15:46:30,064 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 15:46:30,064 - __main__ - ERROR - process_single_job:554 - ❌ batch_021 失败: 2025-05-26 15:46:30,032 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 15:46:30,064 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 15:50:30,069 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 22/53: batch_022
+2025-05-26 15:50:30,072 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_022 (第1次尝试)
+2025-05-26 15:50:30,073 - __main__ - INFO - process_single_job:412 -    行范围: 421-440
+2025-05-26 15:50:30,073 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_022.jsonl --model gpt-4o-mini --start-row 420 --end-row 440
+2025-05-26 15:50:30,073 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 15:50:30,073 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:50:30,489 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 15:50:30,489 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:50:30,489 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:50:30,489 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:50:30,447 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 15:50:30,447 - INFO - 处理范围: 第421行到第440行
+2025-05-26 15:50:30,450 - INFO - 处理进度: 10/20
+2025-05-26 15:50:30,454 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 15:50:30,489 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 15:50:30,489 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_022.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 15:50:30,489 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 15:50:30,489 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:50:30,746 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 15:50:30,746 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:50:30,746 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:50:30,746 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:50:30,713 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 15:50:30,746 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 15:50:30,746 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_022 失败原因:
+2025-05-26 15:50:30,746 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 15:50:30,747 - __main__ - ERROR - process_single_job:554 - ❌ batch_022 失败: 2025-05-26 15:50:30,713 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 15:50:30,747 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 15:54:30,751 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 23/53: batch_023
+2025-05-26 15:54:30,755 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_023 (第1次尝试)
+2025-05-26 15:54:30,756 - __main__ - INFO - process_single_job:412 -    行范围: 441-460
+2025-05-26 15:54:30,756 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_023.jsonl --model gpt-4o-mini --start-row 440 --end-row 460
+2025-05-26 15:54:30,756 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 15:54:30,756 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:54:31,156 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 15:54:31,156 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:54:31,156 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:54:31,156 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:54:31,115 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 15:54:31,115 - INFO - 处理范围: 第441行到第460行
+2025-05-26 15:54:31,119 - INFO - 处理进度: 10/20
+2025-05-26 15:54:31,123 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 15:54:31,156 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 15:54:31,156 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_023.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 15:54:31,156 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 15:54:31,156 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:54:31,410 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 15:54:31,410 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:54:31,410 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:54:31,410 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:54:31,379 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 15:54:31,410 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 15:54:31,410 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_023 失败原因:
+2025-05-26 15:54:31,410 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 15:54:31,411 - __main__ - ERROR - process_single_job:554 - ❌ batch_023 失败: 2025-05-26 15:54:31,379 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 15:54:31,411 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 15:58:31,415 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 24/53: batch_024
+2025-05-26 15:58:31,418 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_024 (第1次尝试)
+2025-05-26 15:58:31,418 - __main__ - INFO - process_single_job:412 -    行范围: 461-480
+2025-05-26 15:58:31,418 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_024.jsonl --model gpt-4o-mini --start-row 460 --end-row 480
+2025-05-26 15:58:31,418 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 15:58:31,418 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:58:31,894 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 15:58:31,894 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:58:31,894 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:58:31,894 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:58:31,851 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 15:58:31,851 - INFO - 处理范围: 第461行到第480行
+2025-05-26 15:58:31,855 - INFO - 处理进度: 10/20
+2025-05-26 15:58:31,859 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 15:58:31,894 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 15:58:31,894 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_024.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 15:58:31,894 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 15:58:31,894 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 15:58:32,187 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 15:58:32,187 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 15:58:32,187 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 15:58:32,187 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 15:58:32,136 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 15:58:32,188 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 15:58:32,188 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_024 失败原因:
+2025-05-26 15:58:32,188 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 15:58:32,189 - __main__ - ERROR - process_single_job:554 - ❌ batch_024 失败: 2025-05-26 15:58:32,136 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 15:58:32,189 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 16:02:32,194 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 25/53: batch_025
+2025-05-26 16:02:32,199 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_025 (第1次尝试)
+2025-05-26 16:02:32,199 - __main__ - INFO - process_single_job:412 -    行范围: 481-500
+2025-05-26 16:02:32,199 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_025.jsonl --model gpt-4o-mini --start-row 480 --end-row 500
+2025-05-26 16:02:32,199 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 16:02:32,199 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:02:32,736 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 16:02:32,736 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:02:32,736 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:02:32,736 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:02:32,685 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 16:02:32,685 - INFO - 处理范围: 第481行到第500行
+2025-05-26 16:02:32,691 - INFO - 处理进度: 10/20
+2025-05-26 16:02:32,698 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 16:02:32,736 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 16:02:32,736 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_025.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 16:02:32,736 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 16:02:32,736 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:02:33,090 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 16:02:33,090 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:02:33,090 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:02:33,090 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:02:33,056 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 16:02:33,090 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 16:02:33,090 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_025 失败原因:
+2025-05-26 16:02:33,090 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 16:02:33,090 - __main__ - ERROR - process_single_job:554 - ❌ batch_025 失败: 2025-05-26 16:02:33,056 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 16:02:33,091 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 16:06:33,093 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 26/53: batch_026
+2025-05-26 16:06:33,096 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_026 (第1次尝试)
+2025-05-26 16:06:33,096 - __main__ - INFO - process_single_job:412 -    行范围: 501-520
+2025-05-26 16:06:33,096 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_026.jsonl --model gpt-4o-mini --start-row 500 --end-row 520
+2025-05-26 16:06:33,096 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 16:06:33,096 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:06:33,833 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.7秒
+2025-05-26 16:06:33,833 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:06:33,833 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:06:33,833 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:06:33,770 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 16:06:33,770 - INFO - 处理范围: 第501行到第520行
+2025-05-26 16:06:33,779 - INFO - 处理进度: 10/20
+2025-05-26 16:06:33,786 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 16:06:33,833 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 16:06:33,833 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_026.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 16:06:33,833 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 16:06:33,833 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:06:34,213 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 16:06:34,213 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:06:34,213 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:06:34,213 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:06:34,169 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 16:06:34,213 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 16:06:34,213 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_026 失败原因:
+2025-05-26 16:06:34,213 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 16:06:34,214 - __main__ - ERROR - process_single_job:554 - ❌ batch_026 失败: 2025-05-26 16:06:34,169 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 16:06:34,214 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 16:10:34,218 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 27/53: batch_027
+2025-05-26 16:10:34,221 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_027 (第1次尝试)
+2025-05-26 16:10:34,221 - __main__ - INFO - process_single_job:412 -    行范围: 521-540
+2025-05-26 16:10:34,221 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_027.jsonl --model gpt-4o-mini --start-row 520 --end-row 540
+2025-05-26 16:10:34,221 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 16:10:34,221 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:10:34,680 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 16:10:34,680 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:10:34,680 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:10:34,680 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:10:34,633 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 16:10:34,633 - INFO - 处理范围: 第521行到第540行
+2025-05-26 16:10:34,640 - INFO - 处理进度: 10/20
+2025-05-26 16:10:34,647 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 16:10:34,680 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 16:10:34,680 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_027.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 16:10:34,680 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 16:10:34,680 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:10:34,939 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 16:10:34,940 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:10:34,940 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:10:34,940 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:10:34,908 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 16:10:34,940 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 16:10:34,940 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_027 失败原因:
+2025-05-26 16:10:34,940 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 16:10:34,940 - __main__ - ERROR - process_single_job:554 - ❌ batch_027 失败: 2025-05-26 16:10:34,908 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 16:10:34,940 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 16:14:34,945 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 28/53: batch_028
+2025-05-26 16:14:34,948 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_028 (第1次尝试)
+2025-05-26 16:14:34,948 - __main__ - INFO - process_single_job:412 -    行范围: 541-560
+2025-05-26 16:14:34,948 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_028.jsonl --model gpt-4o-mini --start-row 540 --end-row 560
+2025-05-26 16:14:34,948 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 16:14:34,949 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:14:35,370 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 16:14:35,370 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:14:35,370 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:14:35,370 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:14:35,321 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 16:14:35,321 - INFO - 处理范围: 第541行到第560行
+2025-05-26 16:14:35,328 - INFO - 处理进度: 10/20
+2025-05-26 16:14:35,335 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 16:14:35,371 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 16:14:35,371 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_028.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 16:14:35,371 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 16:14:35,371 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:14:35,622 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 16:14:35,622 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:14:35,622 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:14:35,622 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:14:35,591 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 16:14:35,622 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 16:14:35,622 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_028 失败原因:
+2025-05-26 16:14:35,622 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 16:14:35,623 - __main__ - ERROR - process_single_job:554 - ❌ batch_028 失败: 2025-05-26 16:14:35,591 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 16:14:35,623 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 16:18:35,627 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 29/53: batch_029
+2025-05-26 16:18:35,630 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_029 (第1次尝试)
+2025-05-26 16:18:35,630 - __main__ - INFO - process_single_job:412 -    行范围: 561-580
+2025-05-26 16:18:35,630 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_029.jsonl --model gpt-4o-mini --start-row 560 --end-row 580
+2025-05-26 16:18:35,630 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 16:18:35,630 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:18:36,075 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 16:18:36,076 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:18:36,076 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:18:36,076 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:18:36,027 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 16:18:36,027 - INFO - 处理范围: 第561行到第580行
+2025-05-26 16:18:36,035 - INFO - 处理进度: 10/20
+2025-05-26 16:18:36,042 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 16:18:36,076 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 16:18:36,076 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_029.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 16:18:36,076 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 16:18:36,076 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:18:36,332 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 16:18:36,332 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:18:36,332 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:18:36,332 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:18:36,295 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 16:18:36,332 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 16:18:36,332 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_029 失败原因:
+2025-05-26 16:18:36,332 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 16:18:36,333 - __main__ - ERROR - process_single_job:554 - ❌ batch_029 失败: 2025-05-26 16:18:36,295 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 16:18:36,333 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 16:22:36,337 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 30/53: batch_030
+2025-05-26 16:22:36,340 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_030 (第1次尝试)
+2025-05-26 16:22:36,341 - __main__ - INFO - process_single_job:412 -    行范围: 581-600
+2025-05-26 16:22:36,341 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_030.jsonl --model gpt-4o-mini --start-row 580 --end-row 600
+2025-05-26 16:22:36,341 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 16:22:36,341 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:22:36,801 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 16:22:36,801 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:22:36,801 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:22:36,801 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:22:36,749 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 16:22:36,749 - INFO - 处理范围: 第581行到第600行
+2025-05-26 16:22:36,757 - INFO - 处理进度: 10/20
+2025-05-26 16:22:36,764 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 16:22:36,801 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 16:22:36,801 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_030.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 16:22:36,801 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 16:22:36,801 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:22:37,061 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 16:22:37,061 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:22:37,061 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:22:37,061 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:22:37,028 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 16:22:37,061 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 16:22:37,061 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_030 失败原因:
+2025-05-26 16:22:37,061 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 16:22:37,062 - __main__ - ERROR - process_single_job:554 - ❌ batch_030 失败: 2025-05-26 16:22:37,028 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 16:22:37,062 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 16:26:37,067 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 31/53: batch_031
+2025-05-26 16:26:37,071 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_031 (第1次尝试)
+2025-05-26 16:26:37,071 - __main__ - INFO - process_single_job:412 -    行范围: 601-620
+2025-05-26 16:26:37,071 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_031.jsonl --model gpt-4o-mini --start-row 600 --end-row 620
+2025-05-26 16:26:37,071 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 16:26:37,071 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:26:37,548 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 16:26:37,548 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:26:37,548 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:26:37,548 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:26:37,498 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 16:26:37,499 - INFO - 处理范围: 第601行到第620行
+2025-05-26 16:26:37,506 - INFO - 处理进度: 10/20
+2025-05-26 16:26:37,512 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 16:26:37,548 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 16:26:37,548 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_031.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 16:26:37,548 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 16:26:37,548 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:26:37,800 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 16:26:37,800 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:26:37,800 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:26:37,800 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:26:37,768 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 16:26:37,800 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 16:26:37,800 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_031 失败原因:
+2025-05-26 16:26:37,800 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 16:26:37,801 - __main__ - ERROR - process_single_job:554 - ❌ batch_031 失败: 2025-05-26 16:26:37,768 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 16:26:37,801 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 16:30:37,819 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 32/53: batch_032
+2025-05-26 16:30:37,823 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_032 (第1次尝试)
+2025-05-26 16:30:37,823 - __main__ - INFO - process_single_job:412 -    行范围: 621-640
+2025-05-26 16:30:37,823 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_032.jsonl --model gpt-4o-mini --start-row 620 --end-row 640
+2025-05-26 16:30:37,823 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 16:30:37,823 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:30:38,372 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 16:30:38,372 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:30:38,373 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:30:38,373 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:30:38,314 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 16:30:38,314 - INFO - 处理范围: 第621行到第640行
+2025-05-26 16:30:38,320 - INFO - 处理进度: 10/20
+2025-05-26 16:30:38,328 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 16:30:38,373 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 16:30:38,373 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_032.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 16:30:38,373 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 16:30:38,373 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:30:38,746 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 16:30:38,746 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:30:38,746 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:30:38,746 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:30:38,711 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 16:30:38,746 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 16:30:38,746 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_032 失败原因:
+2025-05-26 16:30:38,746 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 16:30:38,747 - __main__ - ERROR - process_single_job:554 - ❌ batch_032 失败: 2025-05-26 16:30:38,711 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 16:30:38,747 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 16:34:38,753 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 33/53: batch_033
+2025-05-26 16:34:38,757 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_033 (第1次尝试)
+2025-05-26 16:34:38,757 - __main__ - INFO - process_single_job:412 -    行范围: 641-660
+2025-05-26 16:34:38,757 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_033.jsonl --model gpt-4o-mini --start-row 640 --end-row 660
+2025-05-26 16:34:38,757 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 16:34:38,758 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:34:39,225 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 16:34:39,226 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:34:39,226 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:34:39,226 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:34:39,177 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 16:34:39,177 - INFO - 处理范围: 第641行到第660行
+2025-05-26 16:34:39,184 - INFO - 处理进度: 10/20
+2025-05-26 16:34:39,191 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 16:34:39,226 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 16:34:39,226 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_033.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 16:34:39,226 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 16:34:39,226 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:34:39,489 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 16:34:39,489 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:34:39,489 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:34:39,489 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:34:39,455 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 16:34:39,489 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 16:34:39,489 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_033 失败原因:
+2025-05-26 16:34:39,489 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 16:34:39,490 - __main__ - ERROR - process_single_job:554 - ❌ batch_033 失败: 2025-05-26 16:34:39,455 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 16:34:39,490 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 16:38:39,495 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 34/53: batch_034
+2025-05-26 16:38:39,498 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_034 (第1次尝试)
+2025-05-26 16:38:39,498 - __main__ - INFO - process_single_job:412 -    行范围: 661-680
+2025-05-26 16:38:39,498 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_034.jsonl --model gpt-4o-mini --start-row 660 --end-row 680
+2025-05-26 16:38:39,498 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 16:38:39,498 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:38:40,112 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.6秒
+2025-05-26 16:38:40,112 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:38:40,112 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:38:40,112 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:38:40,062 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 16:38:40,062 - INFO - 处理范围: 第661行到第680行
+2025-05-26 16:38:40,069 - INFO - 处理进度: 10/20
+2025-05-26 16:38:40,076 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 16:38:40,112 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 16:38:40,112 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_034.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 16:38:40,112 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 16:38:40,112 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:38:40,456 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 16:38:40,457 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:38:40,457 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:38:40,457 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:38:40,425 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 16:38:40,457 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 16:38:40,457 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_034 失败原因:
+2025-05-26 16:38:40,457 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 16:38:40,457 - __main__ - ERROR - process_single_job:554 - ❌ batch_034 失败: 2025-05-26 16:38:40,425 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 16:38:40,457 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 16:42:40,463 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 35/53: batch_035
+2025-05-26 16:42:40,468 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_035 (第1次尝试)
+2025-05-26 16:42:40,468 - __main__ - INFO - process_single_job:412 -    行范围: 681-700
+2025-05-26 16:42:40,468 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_035.jsonl --model gpt-4o-mini --start-row 680 --end-row 700
+2025-05-26 16:42:40,468 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 16:42:40,468 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:42:40,913 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 16:42:40,913 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:42:40,913 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:42:40,913 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:42:40,865 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 16:42:40,865 - INFO - 处理范围: 第681行到第700行
+2025-05-26 16:42:40,872 - INFO - 处理进度: 10/20
+2025-05-26 16:42:40,879 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 16:42:40,913 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 16:42:40,913 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_035.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 16:42:40,913 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 16:42:40,913 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:42:41,162 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.2秒
+2025-05-26 16:42:41,162 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:42:41,162 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:42:41,162 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:42:41,131 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 16:42:41,162 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 16:42:41,162 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_035 失败原因:
+2025-05-26 16:42:41,162 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 16:42:41,163 - __main__ - ERROR - process_single_job:554 - ❌ batch_035 失败: 2025-05-26 16:42:41,131 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 16:42:41,163 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 16:46:41,168 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 36/53: batch_036
+2025-05-26 16:46:41,172 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_036 (第1次尝试)
+2025-05-26 16:46:41,173 - __main__ - INFO - process_single_job:412 -    行范围: 701-720
+2025-05-26 16:46:41,173 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_036.jsonl --model gpt-4o-mini --start-row 700 --end-row 720
+2025-05-26 16:46:41,173 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 16:46:41,173 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:46:41,595 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 16:46:41,595 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:46:41,595 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:46:41,595 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:46:41,545 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 16:46:41,546 - INFO - 处理范围: 第701行到第720行
+2025-05-26 16:46:41,553 - INFO - 处理进度: 10/20
+2025-05-26 16:46:41,560 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 16:46:41,595 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 16:46:41,595 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_036.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 16:46:41,595 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 16:46:41,595 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 16:46:41,847 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 16:46:41,847 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 16:46:41,847 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 16:46:41,847 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 16:46:41,815 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 16:46:41,847 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 16:46:41,847 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_036 失败原因:
+2025-05-26 16:46:41,847 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 16:46:41,848 - __main__ - ERROR - process_single_job:554 - ❌ batch_036 失败: 2025-05-26 16:46:41,815 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 16:46:41,848 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 17:02:35,816 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 37/53: batch_037
+2025-05-26 17:02:35,819 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_037 (第1次尝试)
+2025-05-26 17:02:35,819 - __main__ - INFO - process_single_job:412 -    行范围: 721-740
+2025-05-26 17:02:35,819 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_037.jsonl --model gpt-4o-mini --start-row 720 --end-row 740
+2025-05-26 17:02:35,820 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 17:02:35,820 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:02:36,458 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.6秒
+2025-05-26 17:02:36,458 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:02:36,458 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:02:36,458 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:02:36,403 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 17:02:36,403 - INFO - 处理范围: 第721行到第740行
+2025-05-26 17:02:36,410 - INFO - 处理进度: 10/20
+2025-05-26 17:02:36,418 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 17:02:36,458 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 17:02:36,458 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_037.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 17:02:36,458 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 17:02:36,458 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:02:36,841 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 17:02:36,841 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:02:36,842 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:02:36,842 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:02:36,803 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 17:02:36,842 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 17:02:36,842 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_037 失败原因:
+2025-05-26 17:02:36,842 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 17:02:36,842 - __main__ - ERROR - process_single_job:554 - ❌ batch_037 失败: 2025-05-26 17:02:36,803 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 17:02:36,842 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 17:06:36,846 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 38/53: batch_038
+2025-05-26 17:06:36,854 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_038 (第1次尝试)
+2025-05-26 17:06:36,854 - __main__ - INFO - process_single_job:412 -    行范围: 741-760
+2025-05-26 17:06:36,854 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_038.jsonl --model gpt-4o-mini --start-row 740 --end-row 760
+2025-05-26 17:06:36,854 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 17:06:36,855 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:06:37,383 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 17:06:37,383 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:06:37,383 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:06:37,383 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:06:37,325 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 17:06:37,326 - INFO - 处理范围: 第741行到第760行
+2025-05-26 17:06:37,333 - INFO - 处理进度: 10/20
+2025-05-26 17:06:37,342 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 17:06:37,383 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 17:06:37,383 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_038.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 17:06:37,383 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 17:06:37,383 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:06:37,705 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 17:06:37,705 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:06:37,706 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:06:37,706 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:06:37,665 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 17:06:37,706 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 17:06:37,706 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_038 失败原因:
+2025-05-26 17:06:37,706 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 17:06:37,706 - __main__ - ERROR - process_single_job:554 - ❌ batch_038 失败: 2025-05-26 17:06:37,665 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 17:06:37,706 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 17:10:37,710 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 39/53: batch_039
+2025-05-26 17:10:37,716 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_039 (第1次尝试)
+2025-05-26 17:10:37,716 - __main__ - INFO - process_single_job:412 -    行范围: 761-780
+2025-05-26 17:10:37,717 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_039.jsonl --model gpt-4o-mini --start-row 760 --end-row 780
+2025-05-26 17:10:37,717 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 17:10:37,718 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:10:38,250 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 17:10:38,251 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:10:38,251 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:10:38,251 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:10:38,196 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 17:10:38,196 - INFO - 处理范围: 第761行到第780行
+2025-05-26 17:10:38,203 - INFO - 处理进度: 10/20
+2025-05-26 17:10:38,210 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 17:10:38,251 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 17:10:38,251 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_039.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 17:10:38,251 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 17:10:38,251 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:10:38,536 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 17:10:38,536 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:10:38,536 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:10:38,536 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:10:38,504 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 17:10:38,536 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 17:10:38,536 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_039 失败原因:
+2025-05-26 17:10:38,536 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 17:10:38,537 - __main__ - ERROR - process_single_job:554 - ❌ batch_039 失败: 2025-05-26 17:10:38,504 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 17:10:38,537 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 17:14:38,541 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 40/53: batch_040
+2025-05-26 17:14:38,547 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_040 (第1次尝试)
+2025-05-26 17:14:38,547 - __main__ - INFO - process_single_job:412 -    行范围: 781-800
+2025-05-26 17:14:38,547 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_040.jsonl --model gpt-4o-mini --start-row 780 --end-row 800
+2025-05-26 17:14:38,547 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 17:14:38,547 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:14:39,032 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 17:14:39,032 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:14:39,032 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:14:39,032 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:14:38,985 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 17:14:38,985 - INFO - 处理范围: 第781行到第800行
+2025-05-26 17:14:38,991 - INFO - 处理进度: 10/20
+2025-05-26 17:14:38,999 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 17:14:39,033 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 17:14:39,033 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_040.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 17:14:39,033 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 17:14:39,033 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:14:39,309 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 17:14:39,309 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:14:39,309 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:14:39,309 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:14:39,277 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 17:14:39,309 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 17:14:39,309 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_040 失败原因:
+2025-05-26 17:14:39,309 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 17:14:39,309 - __main__ - ERROR - process_single_job:554 - ❌ batch_040 失败: 2025-05-26 17:14:39,277 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 17:14:39,309 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 17:18:39,307 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 41/53: batch_041
+2025-05-26 17:18:39,310 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_041 (第1次尝试)
+2025-05-26 17:18:39,310 - __main__ - INFO - process_single_job:412 -    行范围: 801-820
+2025-05-26 17:18:39,310 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_041.jsonl --model gpt-4o-mini --start-row 800 --end-row 820
+2025-05-26 17:18:39,310 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 17:18:39,310 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:18:39,742 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 17:18:39,743 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:18:39,743 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:18:39,743 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:18:39,696 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 17:18:39,696 - INFO - 处理范围: 第801行到第820行
+2025-05-26 17:18:39,703 - INFO - 处理进度: 10/20
+2025-05-26 17:18:39,710 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 17:18:39,743 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 17:18:39,743 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_041.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 17:18:39,743 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 17:18:39,743 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:18:40,028 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 17:18:40,028 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:18:40,028 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:18:40,028 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:18:39,983 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 17:18:40,028 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 17:18:40,028 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_041 失败原因:
+2025-05-26 17:18:40,028 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 17:18:40,029 - __main__ - ERROR - process_single_job:554 - ❌ batch_041 失败: 2025-05-26 17:18:39,983 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 17:18:40,029 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 17:22:40,032 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 42/53: batch_042
+2025-05-26 17:22:40,036 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_042 (第1次尝试)
+2025-05-26 17:22:40,036 - __main__ - INFO - process_single_job:412 -    行范围: 821-840
+2025-05-26 17:22:40,036 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_042.jsonl --model gpt-4o-mini --start-row 820 --end-row 840
+2025-05-26 17:22:40,036 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 17:22:40,036 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:22:40,500 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 17:22:40,500 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:22:40,500 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:22:40,501 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:22:40,449 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 17:22:40,449 - INFO - 处理范围: 第821行到第840行
+2025-05-26 17:22:40,455 - INFO - 处理进度: 10/20
+2025-05-26 17:22:40,463 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 17:22:40,501 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 17:22:40,501 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_042.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 17:22:40,501 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 17:22:40,501 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:22:40,778 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 17:22:40,778 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:22:40,778 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:22:40,778 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:22:40,746 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 17:22:40,778 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 17:22:40,778 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_042 失败原因:
+2025-05-26 17:22:40,778 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 17:22:40,779 - __main__ - ERROR - process_single_job:554 - ❌ batch_042 失败: 2025-05-26 17:22:40,746 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 17:22:40,779 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 17:26:40,783 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 43/53: batch_043
+2025-05-26 17:26:40,787 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_043 (第1次尝试)
+2025-05-26 17:26:40,787 - __main__ - INFO - process_single_job:412 -    行范围: 841-860
+2025-05-26 17:26:40,788 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_043.jsonl --model gpt-4o-mini --start-row 840 --end-row 860
+2025-05-26 17:26:40,788 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 17:26:40,788 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:26:41,240 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 17:26:41,241 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:26:41,241 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:26:41,241 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:26:41,189 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 17:26:41,189 - INFO - 处理范围: 第841行到第860行
+2025-05-26 17:26:41,197 - INFO - 处理进度: 10/20
+2025-05-26 17:26:41,204 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 17:26:41,241 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 17:26:41,241 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_043.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 17:26:41,241 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 17:26:41,241 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:26:41,509 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 17:26:41,509 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:26:41,509 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:26:41,509 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:26:41,476 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 17:26:41,509 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 17:26:41,509 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_043 失败原因:
+2025-05-26 17:26:41,509 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 17:26:41,510 - __main__ - ERROR - process_single_job:554 - ❌ batch_043 失败: 2025-05-26 17:26:41,476 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 17:26:41,510 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 17:30:41,514 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 44/53: batch_044
+2025-05-26 17:30:41,516 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_044 (第1次尝试)
+2025-05-26 17:30:41,516 - __main__ - INFO - process_single_job:412 -    行范围: 861-880
+2025-05-26 17:30:41,517 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_044.jsonl --model gpt-4o-mini --start-row 860 --end-row 880
+2025-05-26 17:30:41,517 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 17:30:41,517 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:30:41,974 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 17:30:41,974 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:30:41,974 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:30:41,974 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:30:41,919 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 17:30:41,919 - INFO - 处理范围: 第861行到第880行
+2025-05-26 17:30:41,927 - INFO - 处理进度: 10/20
+2025-05-26 17:30:41,932 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 17:30:41,974 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 17:30:41,974 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_044.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 17:30:41,974 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 17:30:41,974 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:30:42,259 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 17:30:42,259 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:30:42,259 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:30:42,259 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:30:42,219 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 17:30:42,259 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 17:30:42,259 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_044 失败原因:
+2025-05-26 17:30:42,259 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 17:30:42,260 - __main__ - ERROR - process_single_job:554 - ❌ batch_044 失败: 2025-05-26 17:30:42,219 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 17:30:42,260 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 17:34:42,264 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 45/53: batch_045
+2025-05-26 17:34:42,268 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_045 (第1次尝试)
+2025-05-26 17:34:42,268 - __main__ - INFO - process_single_job:412 -    行范围: 881-900
+2025-05-26 17:34:42,268 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_045.jsonl --model gpt-4o-mini --start-row 880 --end-row 900
+2025-05-26 17:34:42,268 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 17:34:42,268 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:34:42,847 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.6秒
+2025-05-26 17:34:42,852 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:34:42,852 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:34:42,852 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:34:42,794 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 17:34:42,795 - INFO - 处理范围: 第881行到第900行
+2025-05-26 17:34:42,802 - INFO - 处理进度: 10/20
+2025-05-26 17:34:42,810 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 17:34:42,852 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 17:34:42,852 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_045.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 17:34:42,852 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 17:34:42,852 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:34:43,250 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 17:34:43,250 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:34:43,250 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:34:43,250 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:34:43,212 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 17:34:43,250 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 17:34:43,250 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_045 失败原因:
+2025-05-26 17:34:43,250 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 17:34:43,251 - __main__ - ERROR - process_single_job:554 - ❌ batch_045 失败: 2025-05-26 17:34:43,212 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 17:34:43,251 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 17:38:43,255 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 46/53: batch_046
+2025-05-26 17:38:43,258 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_046 (第1次尝试)
+2025-05-26 17:38:43,258 - __main__ - INFO - process_single_job:412 -    行范围: 901-920
+2025-05-26 17:38:43,258 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_046.jsonl --model gpt-4o-mini --start-row 900 --end-row 920
+2025-05-26 17:38:43,259 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 17:38:43,259 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:38:43,845 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.6秒
+2025-05-26 17:38:43,845 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:38:43,845 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:38:43,845 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:38:43,789 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 17:38:43,789 - INFO - 处理范围: 第901行到第920行
+2025-05-26 17:38:43,796 - INFO - 处理进度: 10/20
+2025-05-26 17:38:43,804 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 17:38:43,845 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 17:38:43,845 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_046.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 17:38:43,845 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 17:38:43,845 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:38:44,257 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 17:38:44,257 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:38:44,257 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:38:44,257 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:38:44,214 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 17:38:44,257 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 17:38:44,257 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_046 失败原因:
+2025-05-26 17:38:44,257 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 17:38:44,258 - __main__ - ERROR - process_single_job:554 - ❌ batch_046 失败: 2025-05-26 17:38:44,214 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 17:38:44,258 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 17:42:44,261 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 47/53: batch_047
+2025-05-26 17:42:44,264 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_047 (第1次尝试)
+2025-05-26 17:42:44,265 - __main__ - INFO - process_single_job:412 -    行范围: 921-940
+2025-05-26 17:42:44,265 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_047.jsonl --model gpt-4o-mini --start-row 920 --end-row 940
+2025-05-26 17:42:44,265 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 17:42:44,265 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:42:44,845 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.6秒
+2025-05-26 17:42:44,845 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:42:44,845 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:42:44,845 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:42:44,787 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 17:42:44,788 - INFO - 处理范围: 第921行到第940行
+2025-05-26 17:42:44,796 - INFO - 处理进度: 10/20
+2025-05-26 17:42:44,803 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 17:42:44,845 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 17:42:44,845 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_047.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 17:42:44,845 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 17:42:44,845 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:42:45,292 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 17:42:45,292 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:42:45,292 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:42:45,292 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:42:45,249 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 17:42:45,292 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 17:42:45,292 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_047 失败原因:
+2025-05-26 17:42:45,292 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 17:42:45,293 - __main__ - ERROR - process_single_job:554 - ❌ batch_047 失败: 2025-05-26 17:42:45,249 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 17:42:45,293 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 17:46:45,326 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 48/53: batch_048
+2025-05-26 17:46:45,328 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_048 (第1次尝试)
+2025-05-26 17:46:45,328 - __main__ - INFO - process_single_job:412 -    行范围: 941-960
+2025-05-26 17:46:45,328 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_048.jsonl --model gpt-4o-mini --start-row 940 --end-row 960
+2025-05-26 17:46:45,329 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 17:46:45,329 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:46:45,910 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.6秒
+2025-05-26 17:46:45,910 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:46:45,910 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:46:45,910 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:46:45,851 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 17:46:45,851 - INFO - 处理范围: 第941行到第960行
+2025-05-26 17:46:45,859 - INFO - 处理进度: 10/20
+2025-05-26 17:46:45,867 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 17:46:45,910 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 17:46:45,910 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_048.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 17:46:45,911 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 17:46:45,911 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:46:46,317 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 17:46:46,317 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:46:46,317 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:46:46,317 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:46:46,275 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 17:46:46,317 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 17:46:46,317 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_048 失败原因:
+2025-05-26 17:46:46,317 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 17:46:46,318 - __main__ - ERROR - process_single_job:554 - ❌ batch_048 失败: 2025-05-26 17:46:46,275 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 17:46:46,318 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 17:50:46,333 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 49/53: batch_049
+2025-05-26 17:50:46,335 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_049 (第1次尝试)
+2025-05-26 17:50:46,335 - __main__ - INFO - process_single_job:412 -    行范围: 961-980
+2025-05-26 17:50:46,335 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_049.jsonl --model gpt-4o-mini --start-row 960 --end-row 980
+2025-05-26 17:50:46,335 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 17:50:46,335 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:50:46,819 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 17:50:46,819 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:50:46,819 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:50:46,819 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:50:46,764 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 17:50:46,764 - INFO - 处理范围: 第961行到第980行
+2025-05-26 17:50:46,772 - INFO - 处理进度: 10/20
+2025-05-26 17:50:46,780 - INFO - 处理进度: 20/20
+2025-05-2...
+2025-05-26 17:50:46,819 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 17:50:46,819 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_049.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 17:50:46,819 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 17:50:46,819 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:50:47,128 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 17:50:47,128 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:50:47,128 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:50:47,128 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:50:47,085 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 17:50:47,128 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 17:50:47,128 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_049 失败原因:
+2025-05-26 17:50:47,128 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 17:50:47,129 - __main__ - ERROR - process_single_job:554 - ❌ batch_049 失败: 2025-05-26 17:50:47,085 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 17:50:47,129 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 17:54:47,136 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 50/53: batch_050
+2025-05-26 17:54:47,140 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_050 (第1次尝试)
+2025-05-26 17:54:47,140 - __main__ - INFO - process_single_job:412 -    行范围: 981-1000
+2025-05-26 17:54:47,140 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_050.jsonl --model gpt-4o-mini --start-row 980 --end-row 1000
+2025-05-26 17:54:47,140 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 17:54:47,140 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:54:47,795 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.7秒
+2025-05-26 17:54:47,795 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:54:47,795 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:54:47,795 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:54:47,736 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 17:54:47,736 - INFO - 处理范围: 第981行到第1000行
+2025-05-26 17:54:47,743 - INFO - 处理进度: 10/20
+2025-05-26 17:54:47,752 - INFO - 处理进度: 20/20
+2025-05-...
+2025-05-26 17:54:47,795 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 17:54:47,795 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_050.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 17:54:47,795 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 17:54:47,795 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:54:48,230 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 17:54:48,230 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:54:48,230 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:54:48,230 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:54:48,187 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 17:54:48,230 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 17:54:48,230 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_050 失败原因:
+2025-05-26 17:54:48,230 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 17:54:48,231 - __main__ - ERROR - process_single_job:554 - ❌ batch_050 失败: 2025-05-26 17:54:48,187 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 17:54:48,231 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 17:58:48,238 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 51/53: batch_051
+2025-05-26 17:58:48,241 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_051 (第1次尝试)
+2025-05-26 17:58:48,241 - __main__ - INFO - process_single_job:412 -    行范围: 1001-1020
+2025-05-26 17:58:48,241 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_051.jsonl --model gpt-4o-mini --start-row 1000 --end-row 1020
+2025-05-26 17:58:48,241 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 17:58:48,241 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:58:48,741 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 17:58:48,741 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:58:48,741 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:58:48,741 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:58:48,684 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 17:58:48,685 - INFO - 处理范围: 第1001行到第1020行
+2025-05-26 17:58:48,693 - INFO - 处理进度: 10/20
+2025-05-26 17:58:48,700 - INFO - 处理进度: 20/20
+2025-05...
+2025-05-26 17:58:48,741 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 17:58:48,741 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_051.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 17:58:48,741 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 17:58:48,741 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 17:58:49,047 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 17:58:49,047 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 17:58:49,047 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 17:58:49,047 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 17:58:49,002 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 17:58:49,047 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 17:58:49,047 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_051 失败原因:
+2025-05-26 17:58:49,047 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 17:58:49,048 - __main__ - ERROR - process_single_job:554 - ❌ batch_051 失败: 2025-05-26 17:58:49,002 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 17:58:49,048 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 18:02:49,055 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 52/53: batch_052
+2025-05-26 18:02:49,059 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_052 (第1次尝试)
+2025-05-26 18:02:49,059 - __main__ - INFO - process_single_job:412 -    行范围: 1021-1040
+2025-05-26 18:02:49,059 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_052.jsonl --model gpt-4o-mini --start-row 1020 --end-row 1040
+2025-05-26 18:02:49,059 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 18:02:49,059 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 18:02:49,618 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.6秒
+2025-05-26 18:02:49,618 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 18:02:49,618 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 18:02:49,618 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 18:02:49,562 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 18:02:49,562 - INFO - 处理范围: 第1021行到第1040行
+2025-05-26 18:02:49,570 - INFO - 处理进度: 10/20
+2025-05-26 18:02:49,579 - INFO - 处理进度: 20/20
+2025-05...
+2025-05-26 18:02:49,618 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 18:02:49,618 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_052.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 18:02:49,618 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 18:02:49,618 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 18:02:49,925 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.3秒
+2025-05-26 18:02:49,926 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 18:02:49,926 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 18:02:49,926 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 18:02:49,886 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 18:02:49,926 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 18:02:49,926 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_052 失败原因:
+2025-05-26 18:02:49,926 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 18:02:49,926 - __main__ - ERROR - process_single_job:554 - ❌ batch_052 失败: 2025-05-26 18:02:49,886 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 18:02:49,926 - __main__ - INFO - process_all_jobs:581 - 等待 240 秒后处理下一个任务...
+2025-05-26 18:06:49,934 - __main__ - INFO - process_all_jobs:574 - 
+处理任务 53/53: batch_053
+2025-05-26 18:06:49,938 - __main__ - INFO - process_single_job:411 - 📦 处理任务 batch_053 (第1次尝试)
+2025-05-26 18:06:49,939 - __main__ - INFO - process_single_job:412 -    行范围: 1041-1056
+2025-05-26 18:06:49,939 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python create_safe_batch_input.py resume_data_20250526_142222.csv output/batch_results_resume_data_20250526_142222_20250526_142613/batch_053.jsonl --model gpt-4o-mini --start-row 1040 --end-row 1056
+2025-05-26 18:06:49,939 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 120秒
+2025-05-26 18:06:49,939 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 18:06:50,433 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.5秒
+2025-05-26 18:06:50,433 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 18:06:50,433 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 18:06:50,433 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 18:06:50,387 - INFO - 成功读取CSV文件，共1056行
+2025-05-26 18:06:50,387 - INFO - 处理范围: 第1041行到第1056行
+2025-05-26 18:06:50,394 - INFO - 处理进度: 10/16
+2025-05-26 18:06:50,407 - INFO - 安全批处理输入文件已创建: outpu...
+2025-05-26 18:06:50,433 - __main__ - INFO - run_safe_command:391 - ✅ 命令执行完成，返回码为0
+2025-05-26 18:06:50,434 - __main__ - INFO - run_safe_command:284 - 🖥️  执行命令: python batch_processor.py output/batch_results_resume_data_20250526_142222_20250526_142613/batch_053.jsonl --output-dir output/batch_results_resume_data_20250526_142222_20250526_142613 --check-interval 30
+2025-05-26 18:06:50,434 - __main__ - INFO - run_safe_command:285 - ⏱️  超时设置: 600秒
+2025-05-26 18:06:50,434 - __main__ - INFO - run_safe_command:289 - 🚀 开始执行命令...
+2025-05-26 18:06:50,798 - __main__ - INFO - run_safe_command:300 - ⏱️  命令执行耗时: 0.4秒
+2025-05-26 18:06:50,799 - __main__ - INFO - run_safe_command:301 - 🔍 返回码: 0
+2025-05-26 18:06:50,799 - __main__ - DEBUG - run_safe_command:307 - 📤 标准输出: ...
+2025-05-26 18:06:50,799 - __main__ - DEBUG - run_safe_command:308 - 📤 错误输出: 2025-05-26 18:06:50,766 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+...
+2025-05-26 18:06:50,799 - __main__ - ERROR - run_safe_command:327 - ❌ 检测到严重错误: 请提供OpenAI API密钥
+2025-05-26 18:06:50,799 - __main__ - ERROR - _analyze_batch_failure:767 - 🔍 分析 batch_053 失败原因:
+2025-05-26 18:06:50,799 - __main__ - ERROR - _analyze_batch_failure:777 -    🔑 可能原因: API密钥问题
+2025-05-26 18:06:50,799 - __main__ - ERROR - process_single_job:554 - ❌ batch_053 失败: 2025-05-26 18:06:50,766 - ERROR - 请提供OpenAI API密钥，通过--api-key参数或OPENAI_API_KEY环境变量
+
+2025-05-26 18:06:50,799 - __main__ - INFO - print_summary:609 - ================================================================================
+2025-05-26 18:06:50,799 - __main__ - INFO - print_summary:610 - 批处理总结
+2025-05-26 18:06:50,799 - __main__ - INFO - print_summary:611 - ================================================================================
+2025-05-26 18:06:50,799 - __main__ - INFO - print_summary:612 - 总任务数: 53
+2025-05-26 18:06:50,800 - __main__ - INFO - print_summary:613 - 已完成: 0
+2025-05-26 18:06:50,800 - __main__ - INFO - print_summary:614 - 失败/超时: 53
+2025-05-26 18:06:50,800 - __main__ - INFO - print_summary:615 - 待处理: 0
+2025-05-26 18:06:50,800 - __main__ - INFO - print_summary:616 - 完成率: 0.0%
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:619 - 失败的任务:
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_001 (第1-20行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_002 (第21-40行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_003 (第41-60行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_004 (第61-80行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_005 (第81-100行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_006 (第101-120行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_007 (第121-140行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_008 (第141-160行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_009 (第161-180行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_010 (第181-200行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_011 (第201-220行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_012 (第221-240行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_013 (第241-260行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_014 (第261-280行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_015 (第281-300行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_016 (第301-320行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_017 (第321-340行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_018 (第341-360行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_019 (第361-380行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_020 (第381-400行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_021 (第401-420行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_022 (第421-440行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_023 (第441-460行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_024 (第461-480行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_025 (第481-500行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_026 (第501-520行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_027 (第521-540行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_028 (第541-560行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_029 (第561-580行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_030 (第581-600行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_031 (第601-620行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_032 (第621-640行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_033 (第641-660行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_034 (第661-680行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_035 (第681-700行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_036 (第701-720行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_037 (第721-740行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_038 (第741-760行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_039 (第761-780行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_040 (第781-800行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_041 (第801-820行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_042 (第821-840行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_043 (第841-860行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_044 (第861-880行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_045 (第881-900行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_046 (第901-920行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_047 (第921-940行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_048 (第941-960行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_049 (第961-980行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_050 (第981-1000行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_051 (第1001-1020行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_052 (第1021-1040行): API密钥问题
+2025-05-26 18:06:50,800 - __main__ - WARNING - print_summary:621 -   batch_053 (第1041-1056行): API密钥问题
+2025-05-27 10:40:41,049 - __main__ - INFO - main:932 - 🎉 批处理器执行完成

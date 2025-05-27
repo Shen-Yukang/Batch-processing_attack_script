@@ -1,0 +1,5 @@
+2025-05-26 09:44:34,463 - robust_batch_processor - INFO - setup_enhanced_logging:58 - 📝 详细日志保存到: output/logs/batch_processor_20250526_094434.log
+2025-05-26 09:44:34,482 - robust_batch_processor - DEBUG - safe_command_execution:140 - 🖥️  执行命令: echo Hello World
+2025-05-26 09:44:34,488 - robust_batch_processor - DEBUG - safe_command_execution:152 - ⏱️  命令执行耗时: 0.0秒
+2025-05-26 09:44:34,489 - robust_batch_processor - DEBUG - safe_command_execution:140 - 🖥️  执行命令: python -c print('Python works')
+2025-05-26 09:44:34,504 - robust_batch_processor - DEBUG - safe_command_execution:152 - ⏱️  命令执行耗时: 0.0秒
