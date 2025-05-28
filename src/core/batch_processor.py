@@ -127,6 +127,8 @@ class BatchProcessor:
             logger.error(f"错误详情: {str(e)}")
             return None
 
+        def __init__(self, input_csv: str, batch_size: int = 50, model: str = "gpt-4o-mini", batch_interval: int = 120, output_base_dir: str = "output"):
+                error_response = self.client.files.content(error_file_id)
     def wait_for_completion(self, batch_id: str, check_interval: int = 60) -> bool:
         """
         等待批处理完成
@@ -151,9 +153,19 @@ class BatchProcessor:
             elapsed_time = time.time() - start_time
             logger.info(f"当前状态: {status} (已等待 {elapsed_time:.1f} 秒)")
 
-            if status == 'completed':
-                logger.info("✅ 批处理已完成")
-                # 记录完成时的详细信息
+            # 官方所有状态处理
+            if status == 'validating':
+                logger.info("🔍 批处理正在验证输入文件...")
+            elif status == 'failed':
+                logger.error("❌ 批处理失败（输入文件未通过验证或运行失败）")
+                self._robust_log_failure_details(status_info)
+                return False
+            elif status == 'in_progress':
+                logger.info("🚀 批处理正在运行...")
+            elif status == 'finalizing':
+                logger.info("📦 批处理已完成，正在准备结果...")
+            elif status == 'completed':
+                logger.info("✅ 批处理已完成，结果已准备好")
                 if status_info.get('request_counts'):
                     counts = status_info['request_counts']
                     total = getattr(counts, 'total', 0)
@@ -161,18 +173,17 @@ class BatchProcessor:
                     failed = getattr(counts, 'failed', 0)
                     logger.info(f"📊 最终统计: {completed}/{total} 完成, {failed} 失败")
                 return True
-            elif status == 'failed':
-                logger.error("❌ 批处理失败")
-                # 记录失败的详细信息
-                self._log_failure_details(status_info)
-                return False
             elif status == 'expired':
-                logger.error("⏰ 批处理已过期")
+                logger.error("⏰ 批处理已过期（24小时未完成）")
                 logger.error(f"过期时间: {status_info.get('expires_at')}")
                 return False
+            elif status == 'cancelling':
+                logger.warning("⚠️ 批处理正在取消（可能需要10分钟）")
             elif status == 'cancelled':
-                logger.error("🚫 批处理已取消")
+                logger.error("🚫 批处理已被取消")
                 return False
+            else:
+                logger.warning(f"⚠️ 未知批处理状态: {status}")
 
             # 显示进度信息
             if status_info.get('request_counts'):

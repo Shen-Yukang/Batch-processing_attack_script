@@ -19,6 +19,7 @@ from typing import List, Dict, Optional, Tuple
 from cost_tracker import CostTracker
 import re
 from src.utils.config_loader import parse_config
+from src.core.batch_processor import BatchProcessor
 
 def setup_enhanced_logging(log_dir: str = "output/logs") -> logging.Logger:
     """设置增强的日志记录"""
@@ -193,12 +194,14 @@ class BatchJob:
 class RobustBatchProcessor:
     """健壮的批处理器 - 增强版"""
 
-    def __init__(self, input_csv: str, batch_size: int = 50, model: str = "gpt-4o-mini", batch_interval: int = 120, output_base_dir: str = "output"):
+    def __init__(self, input_csv: str, batch_size: int = 50, model: str = "gpt-4o-mini", batch_interval: int = 120, output_base_dir: str = "output", api_key: str = None):
         self.input_csv = input_csv
         self.batch_size = batch_size
         self.model = model
         self.batch_interval = batch_interval
         self.output_base_dir = output_base_dir
+        self.api_key = api_key or os.getenv('OPENAI_API_KEY')
+        self.batch_api = BatchProcessor(self.api_key)
 
         # 创建基于CSV文件名和时间戳的输出目录
         csv_basename = os.path.splitext(os.path.basename(input_csv))[0]
@@ -846,72 +849,34 @@ class RobustBatchProcessor:
         logger.debug(f"📊 {os.path.basename(file_path)}: 解析出 {len(results)} 条结果")
         return results
 
-    def wait_for_completion(self, batch_id: str, check_interval: int = 60) -> bool:
-        """
-        等待批处理完成
+    def _robust_log_failure_details(self, status_info: dict):
+        """详细记录批处理失败的详细信息，仿照batch_processor.py"""
+        logger.error("💥 批处理失败详情:")
+        logger.error(f"   失败时间: {status_info.get('failed_at')}")
+        # 如果有错误文件，尝试下载并记录内容
+        error_file_id = status_info.get('error_file_id')
+        if error_file_id:
+            logger.error(f"   错误文件ID: {error_file_id}")
+            try:
+                error_response = self.batch_api.client.files.content(error_file_id)
+                error_content = error_response.content.decode('utf-8')
+                logger.error(f"   错误内容预览: {error_content[:500]}...")
+                print(f"⚠️ 错误内容预览: {error_content[:500]}...")
+            except Exception as e:
+                logger.error(f"   无法读取错误文件: {e}")
+        else:
+            logger.error("   没有错误文件ID")
+        # 记录请求统计
+        if status_info.get('request_counts'):
+            counts = status_info['request_counts']
+            total = getattr(counts, 'total', 0)
+            completed = getattr(counts, 'completed', 0)
+            failed = getattr(counts, 'failed', 0)
+            logger.error(f"   请求统计: 总数={total}, 完成={completed}, 失败={failed}")
+            print(f"📊 请求统计: 总数={total}, 完成={completed}, 失败={failed}")
 
-        Args:
-            batch_id: 批处理ID
-            check_interval: 检查间隔（秒）
-
-        Returns:
-            是否成功完成
-        """
-        logger.info(f"等待批处理完成: {batch_id}")
-        start_time = time.time()
-
-        while True:
-            status_info = self.get_batch_status(batch_id)
-            if not status_info:
-                logger.error("无法获取批处理状态")
-                return False
-
-            status = status_info['status']
-            elapsed_time = time.time() - start_time
-            logger.info(f"当前状态: {status} (已等待 {elapsed_time:.1f} 秒)")
-
-            # 官方所有状态处理
-            if status == 'validating':
-                logger.info("🔍 批处理正在验证输入文件...")
-            elif status == 'failed':
-                logger.error("❌ 批处理失败（输入文件未通过验证或运行失败）")
-                self._log_failure_details(status_info)
-                return False
-            elif status == 'in_progress':
-                logger.info("🚀 批处理正在运行...")
-            elif status == 'finalizing':
-                logger.info("📦 批处理已完成，正在准备结果...")
-            elif status == 'completed':
-                logger.info("✅ 批处理已完成，结果已准备好")
-                if status_info.get('request_counts'):
-                    counts = status_info['request_counts']
-                    total = getattr(counts, 'total', 0)
-                    completed = getattr(counts, 'completed', 0)
-                    failed = getattr(counts, 'failed', 0)
-                    logger.info(f"📊 最终统计: {completed}/{total} 完成, {failed} 失败")
-                return True
-            elif status == 'expired':
-                logger.error("⏰ 批处理已过期（24小时未完成）")
-                logger.error(f"过期时间: {status_info.get('expires_at')}")
-                return False
-            elif status == 'cancelling':
-                logger.warning("⚠️ 批处理正在取消（可能需要10分钟）")
-            elif status == 'cancelled':
-                logger.error("🚫 批处理已被取消")
-                return False
-            else:
-                logger.warning(f"⚠️ 未知批处理状态: {status}")
-
-            # 显示进度信息
-            if status_info.get('request_counts'):
-                counts = status_info['request_counts']
-                total = getattr(counts, 'total', 0)
-                completed = getattr(counts, 'completed', 0)
-                failed = getattr(counts, 'failed', 0)
-                logger.info(f"📈 进度: {completed}/{total} 完成, {failed} 失败")
-
-            logger.info(f"⏳ 等待 {check_interval} 秒后再次检查...")
-            time.sleep(check_interval)
+    def get_batch_status(self, batch_id: str):
+        return self.batch_api.get_batch_status(batch_id)
 
 def main():
     config = parse_config('config/batch_config.conf')
