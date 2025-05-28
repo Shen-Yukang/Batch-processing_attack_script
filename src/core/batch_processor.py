@@ -106,7 +106,7 @@ class BatchProcessor:
 
             # 记录详细的状态信息
             logger.debug(f"批处理状态详情 {batch_id}:")
-            logger.debug(f"  状态: {status_info['status']}")
+            logger.debug(f"  当前查询状态: {status_info['status']}")
             logger.debug(f"  创建时间: {status_info['created_at']}")
             logger.debug(f"  完成时间: {status_info['completed_at']}")
             logger.debug(f"  失败时间: {status_info['failed_at']}")

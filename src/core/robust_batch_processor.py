@@ -11,9 +11,7 @@ import logging
 import subprocess
 import argparse
 import glob
-import shlex
 import pandas as pd
-import base64
 from datetime import datetime
 from typing import List, Dict, Optional, Tuple
 from cost_tracker import CostTracker
@@ -165,7 +163,7 @@ def safe_command_execution(command_parts: List[str], timeout: int = 600) -> Tupl
 
 class BatchJob:
     """批处理任务类"""
-    def __init__(self, name: str, start_row: int, end_row: int, status: str = "pending"):
+    def __init__(self, name: str, start_row: int, end_row: int, status: str = "pending"): # 初始化任务对象
         self.name = name
         self.start_row = start_row
         self.end_row = end_row
@@ -177,7 +175,7 @@ class BatchJob:
         self.created_at = datetime.now()
         self.completed_at = None
 
-    def to_dict(self):
+    def to_dict(self): # 将任务对象转换为字典
         return {
             "name": self.name,
             "start_row": self.start_row,
@@ -195,13 +193,13 @@ class RobustBatchProcessor:
     """健壮的批处理器 - 增强版"""
 
     def __init__(self, input_csv: str, batch_size: int = 50, model: str = "gpt-4o-mini", batch_interval: int = 120, output_base_dir: str = "output", api_key: str = None):
-        self.input_csv = input_csv
-        self.batch_size = batch_size
-        self.model = model
-        self.batch_interval = batch_interval
-        self.output_base_dir = output_base_dir
-        self.api_key = api_key or os.getenv('OPENAI_API_KEY')
-        self.batch_api = BatchProcessor(self.api_key)
+        self.input_csv = input_csv # 输入CSV文件路径
+        self.batch_size = batch_size # 批次大小
+        self.model = model # 使用的模型
+        self.batch_interval = batch_interval # 批次间隔
+        self.output_base_dir = output_base_dir # 输出目录
+        self.api_key = api_key or os.getenv('OPENAI_API_KEY') # 获取API密钥，是环境变量（安全考虑），如果为空，则使用传入的api_key
+        self.batch_api = BatchProcessor(self.api_key) # 初始化批处理API
 
         # 创建基于CSV文件名和时间戳的输出目录
         csv_basename = os.path.splitext(os.path.basename(input_csv))[0]
